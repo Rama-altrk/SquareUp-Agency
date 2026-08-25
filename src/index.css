@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Inter:opsz@14..32&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 
+font-family: "Barlow", sans-serif;
+font-family: "Inter", sans-serif;
+*/
+
+.mainContainer{
+  padding-left: 5.55%;
+  padding-right: 5.55%;
+}
+
+
+@media screen and (min-width: 1441px) {
+  .mainContainer{
+    padding-left: 9.2%;
+    padding-right: 9.2%;
+  }
+}
+
+@media screen and (max-width: 391px) {
+  .mainContainer{
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
