@@ -1,4 +1,5 @@
 import './App.css'
+import { COLORS } from './assets/constants/colors'
 
 function App() {
 
