@@ -1,0 +1,41 @@
+.count {
+height: 100px; 
+width: 100%;
+display: flex;
+align-items: center;
+gap: 20px;
+overflow: hidden;
+img{
+  width:  15%;
+  padding: 10px 40px;
+}
+}
+.trusted {
+  padding: 20px 34px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trusted p {
+  font-size: 18px;
+  width: 286px;
+  font-weight: 500;
+  transform: translateY(40px);
+}
+
+@media (max-width: 992px) {
+  .count {
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, auto); 
+    gap: 10px;
+    justify-items: center;
+  }
+    .count img {
+    width: 159px;
+    padding: 10px 20px;
+  }
+}
+
