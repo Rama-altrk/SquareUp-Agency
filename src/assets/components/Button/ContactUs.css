@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contactUs {
+    button {
+        width: 135px;
+        height: 59px;
+        gap: 8px;
+        border-radius: 8px;
+        border: none;
+        background-color: var(--green50);
+        color: var(--grey15);
+        font-family: var(--font-primary);
+        font-weight:var(--fw-medium);
+        font-size: 18px;
+        line-height: 150%;
+    }
+}
