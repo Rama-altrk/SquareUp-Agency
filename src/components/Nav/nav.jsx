@@ -3,7 +3,6 @@ import './nav.css';
 import Logo from './../Logo/logo'; 
 import { FaTimes } from 'react-icons/fa';
 import { HiMenuAlt3 } from 'react-icons/hi'; 
-import Button from '../Button/Button'
 const Nav = ({ items, activePath = 'Home', btnText }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -31,7 +30,7 @@ const Nav = ({ items, activePath = 'Home', btnText }) => {
         })}
       </ul>
 
-     {btnText && <Button text={btnText} className="nav-btn" />}
+      {btnText && <button className="nav-btn">{btnText}</button>}
       
       <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
         {isOpen ? <FaTimes /> : <HiMenuAlt3 />}

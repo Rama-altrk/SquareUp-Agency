@@ -1,5 +1,6 @@
 import './App.css'
 import Nav from './components/Nav/nav'
+import Footer from './components/Footer/footer'
 function App() {
   const navItems = [
     { content: 'Home', path: '/' },
@@ -16,6 +17,7 @@ function App() {
         activePath="Home" 
         btnText="Contact Us" 
       /> 
+      <Footer />
     </div>
   )
 }
