@@ -1,9 +1,9 @@
 import React from 'react'
 import './ServicesCards.css'
-import '../assets/styles/colors.css'
-import '../assets/styles/fonts.css'
+import '../../assets/styles/colors.css'
+import '../../assets/styles/fonts.css'
 
-const servicesData =[
+const servicesData = [
     {
         id: 1,
         title: "Design",
@@ -29,19 +29,18 @@ return (
     <section className='bs-services-section'>
         <div className="bs-services-grid">
         {servicesData.map((service) => (
-        <div key={service.id} className="bs-service-card">
-            <div className="card-icon-box">
-                <div className="bs-Square">
-                    <img src={service.icon} alt={service.title} />
+            <div key={service.id} className="bs-service-card">
+                <div className="bs-container">
+                    <div className="bs-service-square">
+                        <img src={service.icon} alt={service.title} />
+                    </div>
+                    <h3>{service.title}</h3>
                 </div>
+                <p>{service.description}</p>
+                <button className="bs-learn-more-btn">Learn More</button>
             </div>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-            <button className="bs-learn-more-btn">Learn More</button>
-        </div>
         ))}
         </div>
-
     </section>
 )
 }
