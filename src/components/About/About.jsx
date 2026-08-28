@@ -1,6 +1,8 @@
 
 import { COLORS } from '../../assets/constants/colors';
 import { FONTS } from '../../assets/constants/fonts';
+import Button from '../Button/Button';
+
 import './About.css'
 
 function About({ reviews }) {
@@ -15,14 +17,14 @@ function About({ reviews }) {
         </p>
       </div>
 
-      <div className="btcards" style={{backgroundColor:COLORS.grey15}}>
+      <div className="bh-cards" style={{backgroundColor:COLORS.grey15}}>
         {
         reviews.map((item, index) => (
-          <div className="btcard" key={index} style={{backgroundColor:COLORS.grey10}}>
+          <div className="bh-card" key={index} style={{backgroundColor:COLORS.grey10}}>
             <h3 className='bh3' style={{color:COLORS.green80,...FONTS.medium}}>{item.title}</h3>
-            <p className='pt' style={{color:COLORS.grey90,...FONTS.regular}}>{item.text} </p>
+            <p className='bh-p' style={{color:COLORS.grey90,...FONTS.regular}}>{item.text} </p>
 
-            <div className="small-card" style={{backgroundColor:COLORS.grey10}}>
+            <div className="bh-small-card" style={{backgroundColor:COLORS.grey10}}>
               <div className="profile-block">
                 <img
                   className="profile-img"
@@ -31,12 +33,22 @@ function About({ reviews }) {
                 />
 
                 <div className="profile-info">
-                  <span className="author" style={{color:COLORS.absolutefff,...FONTS.medium}}>{item.author}</span>
-                  <p className="author-title" style={{color:COLORS.grey90,...FONTS.regular,fontSize:14}}>{item.authorTitle}</p>
+                  <span className="bh-author" style={{color:COLORS.absolutefff,...FONTS.medium}}>{item.author}</span>
+                  <p className="bh-author-title" style={{color:COLORS.grey90,...FONTS.regular,fontSize:14}}>{item.authorTitle}</p>
                 </div>
               </div>
 
-              <button className='bh-btn' style={{backgroundColor:COLORS.grey15}} >Open Website</button>
+                <Button 
+                    name="Open Website"
+                    width="117px"
+                    height="50px"
+                    fontSize="14px"
+                    borderRadius="6px"
+                    backgroundColor="var(--grey15)"
+                    color="white"
+                    border="none"
+                    className="bh-btn"/>
+
             </div>
           </div>
         )

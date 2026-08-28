@@ -16,26 +16,26 @@ opacity: 0.6;
   background-position: center;
   background-repeat: no-repeat;
 }
- .btcards {
+ .bh-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 40px;
   height: auto;
 }
 
-.btcard {
+.bh-card {
   padding: 25px;
   border-right: 1px solid var(--grey15);
   border-bottom: 1px solid var(--grey15);
   height: 420px;
 
-   .bh3{
+  .bh3{
     margin-top: 80px;
     margin-left: 60px;
     font-size: 20px
   ;
   }
-  .pt{
+  .bh-p{
   margin-left: 60px;
   margin-top: 20px;
   font-size: 16px;
@@ -43,7 +43,7 @@ opacity: 0.6;
   }
 }
 
-.small-card {
+.bh-small-card {
   padding: 15px;
   border-radius: 6px;
   margin-top: 30px;
@@ -72,27 +72,24 @@ opacity: 0.6;
   padding-left: 12px;
 }
 .bh-btn {
-  padding: 10px 18px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+  padding: 14px 16px;
   background-color: var(--grey15);
   color: var(--absolutefff);
 }
-.author{
+.bh-author{
   font-size: 16px;
 }
-.author-title{
+.bh-author-title{
   font-size: 14px;
 }
 
 @media (max-width: 992px) {
-  .btcards {
+  .bh-cards {
     padding-left: 16px;
     padding-right: 16px;
     grid-template-columns: 1fr;
     border: 4px  solid var(--grey15);
-    .bh3,.pt,.small-card{
+    .bh3,.bh-p,.bh-small-card{
       margin-left: 24px;
     }
     
@@ -100,14 +97,14 @@ opacity: 0.6;
   .bh-btn{
     display: none;
   }
-  .btcard{
+  .bh-card{
     height: auto;
 
   .bh3{
     margin-top: 40px;
   }
   }
-  .small-card{
+  .bh-small-card{
     height: 73px;
     margin-top: 24px;
   }
