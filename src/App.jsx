@@ -1,6 +1,10 @@
 import './App.css'
+
 import About from './components/About/About';
 import Companies from './components/Companies/Companies'
+
+
+
 function App() {
   let images=[
   '/img/homeImg/zapier.png',
@@ -60,10 +64,13 @@ const reviews = [
   return (
 <>
     <div className='mainContainer'>
+
         <Companies 
         text="Trusted By 250+ Companies"
         images={images}/>
         <About  reviews={reviews} />
+     
+
     </div>
         
         </>
