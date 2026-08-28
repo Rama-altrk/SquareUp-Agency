@@ -13,6 +13,7 @@
  * @property {string} green99 -#FDFFFA
  * 
  * @property {string} grey10 -#191919
+ * @property {string} grey12 -#242424  50%
  * @property {string} grey15 -#262626
  * @property {string} grey20 -#333333
  * @property {string} grey30 -#4C4C4D
@@ -37,6 +38,7 @@ export const COLORS = {
     green99: "var(--green99)" ,
 
     grey10: "var(--grey10)" ,
+    grey12: "var(--grey12)" ,
     grey15: "var(--grey15)" ,
     grey20: "var(--grey20)" ,
     grey30: "var(--grey30)" ,

@@ -1,10 +1,10 @@
 import './App.css'
+import Form from './assets/components/Form/Form'
 
 function App() {
 
   return (
-    <div className='mainContainer'>
-      
+    <div className='rtMainContainer'>
     </div>
   )
 }
