@@ -251,7 +251,7 @@
   font-size: 14px;
 }
 }
-@media (max-width: 390.9px) {
+@media (max-width: 992px) {
   .footer-container {
     max-width: 390px;
     padding-top: 30px;

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './nav.css';
 import Logo from './../Logo/logo'; 
 import { FaTimes } from 'react-icons/fa';
@@ -18,13 +19,13 @@ const Nav = ({ items, activePath = 'Home', btnText }) => {
           const isCurrent = item.content === activePath;
           return (
             <li key={index}>
-              <a 
-                href={item.path || '#'} 
+              <Link 
+                to={item.path || '#'} 
                 className={isCurrent ? 'active' : ''}
                 onClick={() => setIsOpen(false)}
               >
                 {item.content}
-              </a>
+              </Link>
             </li>
           );
         })}
