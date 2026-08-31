@@ -8,5 +8,4 @@
 button {
     font-family: var(--font-primary);
     font-weight: var(--fw-medium);
-    cursor: pointer;
 }

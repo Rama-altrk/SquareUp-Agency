@@ -10,19 +10,19 @@ function App() {
     <div className='mainContainer'>
 {/*       <Button 
       name="submit"
-      width={1}
-      height={1}
+      width={100}
+      height={60}
       backgroundColor="var( --grey20)"
       color= "var( --green99)"
-      borderRadius={1}
-      fontSize={1}
-      border={1}
+      borderRadius={10}
+      fontSize={18}
+      border="none"
       /> */}
       
 
-{/* <CtaSection/> */}
+{<CtaSection/>}
 
-{/* <WyhChooseSeciton/> */}
+<WyhChooseSeciton/>
 
     </div>
   )
