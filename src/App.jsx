@@ -8,21 +8,21 @@ function App() {
 
   return (
     <div className='mainContainer'>
-{/*       <Button 
-      name="submit"
-      width={100}
-      height={60}
-      backgroundColor="var( --grey20)"
-      color= "var( --green99)"
-      borderRadius={10}
-      fontSize={18}
-      border="none"
-      /> */}
-      
+      <Button
+        name="submit"
+        width={100}
+        height={60}
+        backgroundColor="var( --grey20)"
+        color="var( --green99)"
+        borderRadius={10}
+        fontSize={18}
+        border="none"
+      />
 
-{<CtaSection/>}
 
-<WyhChooseSeciton/>
+      <CtaSection />
+
+      <WyhChooseSeciton />
 
     </div>
   )
