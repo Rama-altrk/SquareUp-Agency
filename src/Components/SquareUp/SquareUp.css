@@ -11,14 +11,16 @@
     background-size: auto, cover;
     filter: grayscale(100%) brightness(0.3);
   }
-.bs-squareup{
+
+.bs-squareup {
     margin-bottom: 80px;
     border-bottom: 1px solid var(--grey15);
     background-color: black;
     position: relative;
     padding: 120px 0px;
     text-align: center;
-    .bs-square{
+
+    .bs-square {
         position: relative;
         z-index: 2;
         filter: none;
@@ -30,18 +32,31 @@
         justify-content: center;
         margin: auto;
         background-color: var(--green50);
+        box-shadow: inset 0 0 14px 6px rgba(255, 255, 255, 0.5);
+        img{
+            width: 42px;
+            height: 48px;
+            opacity: 1;
+            top: 16px;
+            left: 18.85px;
+
+        }
     }
-    h2{
+
+    h2 {
         position: relative;
         z-index: 2;
         filter: none;
         margin-top: 50px;
         font-family: var(--font-primary);
-        font-weight: var( --fw-semibold);
+        font-weight: var(--fw-semibold);
         font-size: 38px;
+        line-height: 100%;
+        letter-spacing: 0%;
         color: var(--absolutefff);
     }
-    p{
+
+    p {
         position: relative;
         z-index: 2;
         filter: none;
@@ -51,23 +66,25 @@
         font-family: var(--font-primary);
         font-weight: var(--fw-regular);
         font-size: 18px;
+        line-height: 150%;
+        letter-spacing: -0.6% ;
         color: var(--grey90);
     }
 }
-@media (max-width: 992px) {
-    .bs-squareup{
-    padding: 50px 16px;
 
+@media (max-width: 992px) {
+    .bs-squareup {
+        padding: 50px 16px;
     }
-    .bs-square{
+    .bs-square {
         width: 50px;
         height: 50px;
     }
-    h2{
+    h2 {
         font-size: 24px !important;
         max-width: 100%;
     }
-    p{
+    p {
         max-width: 100%;
         font-size: 14px !important;
     }
