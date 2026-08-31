@@ -9,7 +9,9 @@
 font-family: "Barlow", sans-serif;
 font-family: "Inter", sans-serif;
 */
-
+body{
+  background-color: var(--grey10);
+}
 .mainContainer{
   padding-left: 5.55%;
   padding-right: 5.55%;
