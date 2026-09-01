@@ -78,6 +78,12 @@
       transition: opacity 0.3s;
     }
   }
+  .nav-btn{
+    font-size: 16px !important;
+    width: 104px !important;
+    height: 45px !important;
+    border-radius: 6px !important;
+  }
 }
 @media (max-width: 992px){
 
