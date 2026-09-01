@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  background-color: var(--grey12, #1a1a1a);
+  background-color: var(--grey12);
   border: 1px solid var(--grey15);
   border-radius: 12px;
   white-space: nowrap;

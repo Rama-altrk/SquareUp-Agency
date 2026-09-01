@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/nav'
 import Footer from './components/Footer/footer'
 function App() {
+
   const navItems = [
     { content: 'Home', path: '/' },
     { content: 'Services', path: '/services' },
