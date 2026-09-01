@@ -1,9 +1,10 @@
-import React from 'react'
+import CtaSection from "../../components/CtaSection/CtaSection.jsx";
+
 
 export default function About() {
     return (
-        <div>
-        
-        </div>
+        <>
+            <CtaSection/>
+        </>
     )
 }

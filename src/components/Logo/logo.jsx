@@ -2,8 +2,8 @@
 import './logo.css'
 
 const Logo = ({ 
-  icon = "/public/img/squareIcon.png", 
-  textImg = "/public/img/homeImg/SquareUp.png", 
+  icon = "/img/squareIcon.png", 
+  textImg = "/img/homeImg/SquareUp.png", 
   altText = "SquareUp" 
 }) => {
   return (

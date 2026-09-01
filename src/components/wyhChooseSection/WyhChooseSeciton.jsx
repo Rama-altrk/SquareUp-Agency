@@ -1,4 +1,3 @@
-
 import './WyhChooseSeciton.css'
 
 function WyhChooseSeciton() {
