@@ -7,6 +7,9 @@ import Work from './pages/Work/Work';
 import Process from './pages/Process/Process';
 import About from './pages/About/About';
 
+import ServicesCards from './Components/ServicesCards/ServicesCards'
+import SquareUp from './Components/SquareUp/SquareUp'
+import ProjectCards from './Components/ProjectCards/ProjectCards'
 function App() {
   const navItems = [
     { content: 'Home', path: '/' },
@@ -34,6 +37,15 @@ function App() {
       <Footer />
     </>
     </Router>
+    <div className='mainContainer'>
+      <ServicesCards/>
+      <SquareUp 
+          title="Thank you for your Interest in SquareUp."
+          description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
+          button={<button>Start Project</button>}
+/>
+<ProjectCards/>
+    </div>
   )
 }
 
