@@ -16,32 +16,33 @@ const Footer = () => {
   ];
   return (
     <footer className="footer-container">
-    <div className="footer-top">
-      <div className="footer-brand-nav">
-          <Logo />
-    <ul className="footer-nav">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <a href={link.path}>{link.name}</a>
-              </li>
-            ))}
-          </ul>
+      <div className="footer-top">
+        
+        <div className="footer-brand-nav">
+            <Logo />
+            <ul className="footer-nav">
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <a href={link.path}>{link.name}</a>
+                </li>
+              ))}
+            </ul>
         </div>
         <div className="social-wrapper">
           <span className="social-label">Stay Connected</span>
           <div className="social-box">
-            <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-            <a href="#" aria-label="Twitter"><FaTwitter /></a>
-            <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
+            <a href="#" aria-label="Facebook"><div className='rtFacebook'><FaFacebookF /></div></a>
+            <a href="#" aria-label="Twitter"><div className='rtTwitter'><FaTwitter /></div></a>
+            <a href="#" aria-label="LinkedIn"><div className='rtLinkedIn'><FaLinkedinIn /></div></a>
           </div>
         </div>
-        </div>
-        <div className="footer-divider"></div>
-        <div className="footer-bottom">
+      </div>
+      <div className="footer-divider"></div>
+      <div className="footer-bottom">
         <div className="footer-contact">
-           <a href="mailto:hello@squareup.com" className="contact-item">
-          <MdEmail className="contact-icon" /> hello@squareup.com
-         </a>
+          <a href="mailto:hello@squareup.com" className="contact-item">
+            <MdEmail className="contact-icon" /> hello@squareup.com
+          </a>
           <a href="tel:+9191813232309" className="contact-item">
             <MdPhone className="contact-icon" /> +91 91813 232309
           </a>

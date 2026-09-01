@@ -33,9 +33,11 @@ const Nav = ({ items, activePath = 'Home', btnText }) => {
 
       {btnText && <button className="nav-btn">{btnText}</button>}
       
-      <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
+      <div className='rtBackMenuToggle'>
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
         {isOpen ? <FaTimes /> : <HiMenuAlt3 />}
-      </button>
+        </button>
+      </div>
     </nav>
   );
 };
