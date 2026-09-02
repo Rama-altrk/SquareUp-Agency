@@ -1,7 +1,7 @@
 import './App.css'
 import ServicesCards from './Components/ServicesCards/ServicesCards'
 import SquareUp from './Components/SquareUp/SquareUp'
-
+import ProjectCards from './Components/ProjectCards/ProjectCards'
 function App() {
 
   return (
@@ -12,6 +12,7 @@ function App() {
           description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
           button={<button>Start Project</button>}
 />
+<ProjectCards/>
     </div>
   )
 }
