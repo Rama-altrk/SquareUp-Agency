@@ -63,22 +63,40 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-  .bh-i{
+ .big{
+            height: 64px;
+            width: 64px;
+            border-radius: 8px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 64px;
-            width: 64px;
             border: 1px solid transparent;
-          border-radius: 8px;
-          background:
-          linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%) padding-box,
-        linear-gradient(180deg, #2E2E2E 0%, rgba(46, 46, 46, 0) 100%) border-box;
+            background:
+            linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%) padding-box,
+            linear-gradient(180deg, #2E2E2E 0%, rgba(46, 46, 46, 0) 100%) border-box;
             font-size: 24px;
             color: var(--green50);
-
+     .bh-iface{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: var(--green50);
+            font-size: 24px;
         }
+        .bh-linkedin{
+                height: 24px;
+            width: 24px;
+            border-radius: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--green50);
+            }
         }
+ }
         }
     }
 }
