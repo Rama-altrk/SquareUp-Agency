@@ -1,0 +1,37 @@
+.ourStory {
+    grid-column: 1/-1;
+    border-left: 1px solid var(--grey15);
+    border-right: 1px solid var(--grey15);
+    border-top: 1px solid var(--grey15);
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+
+    h1 {
+        font-size: clamp(38px, 2.8vw + 27px, 58px);
+        font-family: var(--font-primary);
+        font-weight: var(--fw-semibold);
+        color: var(--absolutefff);
+        margin: 100px 0 100px 0;
+    }
+
+}
+
+@media (min-width: 980px) and (max-width:1440px) {
+    .ourStory {
+
+        h1 {
+            margin: 81px 0 80px 0;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .ourStory {
+        padding-left: 24px;
+
+        h1 {
+            margin: 40px 0 40px 0;
+        }
+    }
+}
