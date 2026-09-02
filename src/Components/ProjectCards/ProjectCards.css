@@ -9,7 +9,8 @@
     border: 1px solid #2a2a2a;
     display: flex;
     flex-direction: column;
-    height: 773px;
+    height: auto; 
+    min-height: 597px;
     width: 50%;
 }
 
@@ -43,7 +44,7 @@
         color: var(--grey90);
         line-height: 150%;
         letter-spacing: -0.6%;
-        margin: 0;
+        margin-top:24px ;
     }
     
     .bs-card-top {
@@ -51,7 +52,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px;
-        margin-top: 20px;
+        margin-top: 10px;
         width: 100%;
         box-sizing: border-box;
         

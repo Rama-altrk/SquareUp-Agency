@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './ProjectCards.css';
+import '../../assets/styles/colors.css'
+import '../../assets/styles/fonts.css'
+
 
 const projectsData = [
   {
@@ -32,7 +35,7 @@ const projectsData = [
     image: "/img/card4photo.png",
     title: "ProTech Solutions",
     link: "https://www.protechsolutions.com",
-    description: "ProTech Solutions required a custom software solution to automate workflow processes and improve internal efficiency.",
+    description: "HungryBites approached us to create a mobile app that streamlined their food delivery service. The app included features like real-time order tracking, easy menu customization, and secure payment options, resulting in improved customer convenience and operational efficiency.",
   },
   {
     id: 5,
