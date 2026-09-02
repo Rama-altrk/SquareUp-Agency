@@ -1,52 +1,77 @@
 
 .count {
   width: 100%;
-  height: 100px;
+  height: 170px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border: 1px solid var(--grey15);
 }
-
 .count img {
   width: 100%;
   max-width: 130px;
   height: 40px;
   object-fit: contain;
 }
-
 .cell {
-  flex: 1;
+ 
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
-
 .trusted {
   padding: 20px 34px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 0;
+   transform: translateY(20px);
+width: 286px;
+  background-color: var(--grey10);
+  border: 1px solid var(--grey15);
+  border-radius: 100px;
+ 
 }
 
 .trusted p {
   font-size: 18px;
-  width: 286px;
+  
   font-weight: 500;
+    position: absolute;
+    z-index: 100;
 
-  transform: translateY(40px);
+ 
 }
+@media (max-width: 1440px){
 
-
-@media (max-width: 768px) {
+.count {
+  width: 100%;
+  height: 132px;
+}
+.trusted{
+  padding: 14px 24px;
+}
+.trusted p {
+  font-size: 14px;
+  width: 217px;
+  font-weight: 500;
+}
+}
+@media (max-width: 992px) {
   .count {
     width: 100%;
-    height: auto;
+    height: 320px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin: 0px auto;
+    /* margin-right: 160px; */
   }
   .cell {
-    width: 100%;
+    /* width: 100%; */
     height: 100px;
     display: flex;
     justify-content: center;
@@ -54,21 +79,24 @@
     border-right: 1px solid var(--grey15);
     border-bottom: 1px solid var(--grey15);
   }
+  .cell:nth-child(2n) {
+  border-right: none;
+}
   .cell img {
-    width: 60%;
-    max-width: 150px;
+    /* width: 60%;
+    max-width: 150px; */
     height: 45px;
-    object-fit: contain;
   }
   .trusted {
     padding: 0;
     position: relative;
     z-index: 2;
+    height: 45px;
+    transform: translateY(20px);
   }
   .trusted p {
-    width: 286px;
-    height: 45px;
-    font-size: 16px;
-    transform: translateY(22px);
+    width: 217px;
+    font-size: 14px;
+    
   }
 }

@@ -12,12 +12,12 @@ function About({ reviews }) {
       <div className="header"   style={{
         backgroundImage: "url('/img/backgrounds/waveToUp.png')",}} >
         <h2 style={{color:COLORS.absolutefff}}>What our Clients say About us</h2>
-        <p style={{color:COLORS.grey90}}>
+        <p style={{color:COLORS.grey90}}> 
           At SquareUp, we take pride in delivering exceptional digital products and services that drive success for our clients. Here's what some of our satisfied clients have to say about their experience working with us
         </p>
       </div>
 
-      <div className="bh-cards" style={{backgroundColor:COLORS.grey15}}>
+      <div className="bh-cards">
         {
         reviews.map((item, index) => (
           <div className="bh-card" key={index} style={{backgroundColor:COLORS.grey10}}>
@@ -34,21 +34,20 @@ function About({ reviews }) {
 
                 <div className="profile-info">
                   <span className="bh-author" style={{color:COLORS.absolutefff,...FONTS.medium}}>{item.author}</span>
-                  <p className="bh-author-title" style={{color:COLORS.grey90,...FONTS.regular,fontSize:14}}>{item.authorTitle}</p>
+                  <p className="bh-author-title" style={{color:COLORS.grey90,...FONTS.regular}}>{item.authorTitle}</p>
                 </div>
               </div>
 
                 <Button 
                     name="Open Website"
-                    width="117px"
-                    height="50px"
-                    fontSize="14px"
+                    width="149px"
+                    height="63px"
+                    fontSize="18px"
                     borderRadius="6px"
                     backgroundColor="var(--grey15)"
-                    color="white"
+                    color=" var(--absolutefff)"
                     border="none"
                     className="bh-btn"/>
-
             </div>
           </div>
         )

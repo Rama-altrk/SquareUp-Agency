@@ -1,6 +1,10 @@
 import './App.css'
 import About from './components/About/About';
 import Companies from './components/Companies/Companies'
+import Contactmeta from './components/Contactmeta/Contactmeta';
+import Slider from './components/Slider/Slider';
+import Socialmedia from './components/Socialmedia/Socialmedia';
+
 function App() {
   let images=[
   '/img/homeImg/zapier.png',
@@ -65,9 +69,12 @@ const reviews = [
         <Companies 
         text="Trusted By 250+ Companies"
         images={images}/>
-        <About  reviews={reviews} />
+        {/* <About reviews={reviews} /> */}
+        <Slider cards={reviews}></Slider>
+        <Socialmedia></Socialmedia>
+        <Contactmeta></Contactmeta>
     </div>
-        
+    
         </>
   )
 }
