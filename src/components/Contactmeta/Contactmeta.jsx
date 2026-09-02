@@ -1,5 +1,7 @@
 import { FONTS } from '../../assets/constants/fonts'
 import './Contactmeta.css'
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 
 function Contactmeta() {
   return (

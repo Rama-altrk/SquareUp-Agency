@@ -1,23 +1,4 @@
-// import './App.css'
-// import About from './components/About/About';
-// import Companies from './components/Companies/Companies'
-// import Contactmeta from './components/Contactmeta/Contactmeta';
-// import Slider from './components/Slider/Slider';
-// import Socialmedia from './components/Socialmedia/Socialmedia';
 
-// function App() {
-
-
-//   return (
-// <>
-//     <div className='mainContainer'>
-
-
-        
-  
-//     </div>
-    
-//         </>
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/nav'
 import Footer from './components/Footer/footer'
