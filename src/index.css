@@ -9,23 +9,23 @@
 font-family: "Barlow", sans-serif;
 font-family: "Inter", sans-serif;
 */
-
-.mainContainer{
+body{
+  background-color: var(--grey10);
+}
+.rtMainContainer{
   padding-left: 5.55%;
   padding-right: 5.55%;
 }
-
-
-
-@media screen and (min-width: 1441px) {
-  .mainContainer{
+  
+@media screen and (min-width: 1440px) {
+  .rtMainContainer{
     padding-left: 9.2%;
     padding-right: 9.2%;
   }
 }
 
-@media screen and (max-width: 391px) {
-  .mainContainer{
+@media screen and (max-width: 992px) {
+  .rtMainContainer{
     padding-left: 4%;
     padding-right: 4%;
   }
