@@ -8,6 +8,7 @@ import Process from './pages/Process/Process';
 import About from './pages/About/About';
 
 function App() {
+
   const navItems = [
     { content: 'Home', path: '/' },
     { content: 'Work', path: '/work' },
