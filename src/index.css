@@ -16,8 +16,7 @@ body{
   padding-left: 5.55%;
   padding-right: 5.55%;
 }
-
-
+  
 @media screen and (min-width: 1440px) {
   .rtMainContainer{
     padding-left: 9.2%;
