@@ -2,6 +2,8 @@ import './About.css'
 import Container from '../../components/Container/Container'
 import CardNumber from '../../components/CardNumaber/CardNumber'
 import AboutSquareUpSection from '../../components/AboutSquareUpSection/AboutSquareUpSection'
+import CtaSection from "../../components/ctaSection/CtaSection";
+
 
 export default function About() {
     const Card = [
@@ -86,6 +88,7 @@ export default function About() {
                     })
                 }
             </Container>
+            <CtaSection/>
         </>
     )
 }
