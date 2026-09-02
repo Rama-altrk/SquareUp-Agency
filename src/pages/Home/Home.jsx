@@ -2,10 +2,6 @@ import React from 'react'
 import Companies from '../../components/Companies/Companies';
 import Slider from '../../components/Slider/Slider';
 
-
-import Contactmeta from '../../components/Contactmeta/Contactmeta';
-import Socialmedia from '../../components/Socialmedia/Socialmedia';
-
 export default function Home() {
       let images=[
   '/img/homeImg/zapier.png',
@@ -65,8 +61,7 @@ const reviews = [
         text="Trusted By 250+ Companies"
         images={images}/>
         <Slider cards={reviews}></Slider>
-        <Socialmedia></Socialmedia>
-        <Contactmeta ></Contactmeta>
+        
     
         </div>
     )
