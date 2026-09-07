@@ -82,6 +82,7 @@ export default function About() {
                                 width={item.width}
                                 height={item.height}
                                 color={item.color}
+                                className="aboutCard"
                                 key={item.id}
                             />
                         )

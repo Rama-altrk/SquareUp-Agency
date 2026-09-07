@@ -16,11 +16,11 @@ body {
     border-right: 1px solid var(--grey15);
     border-bottom: 1px solid var(--grey15);
     border-top: 1px solid var(--grey15);
-    padding-bottom: 50px;
+    padding: 100px 0 50px 0;
 }
 
 .mr-subContainer-process {
-    padding-top: 120px;
+
     padding-left: 50px;
 
     h1 {
@@ -68,11 +68,7 @@ body {
     }
 }
 
-@media (min-width: 992px) and (max-width:1441px) {
-
-    .mr-atSquareUp{
-        padding-bottom: 40PX;
-    }
+@media (min-width: 992px) and (max-width:1440px) {
 
     .mr-subContainer-process {
 
@@ -102,8 +98,11 @@ body {
 
 @media (max-width: 992px) {
 
+    .mr-atSquareUp{
+        padding-top: 41px;
+    }
+
     .mr-subContainer-process {
-        padding-top: 40px;
         padding-left: 16px;
 
         h1 {
