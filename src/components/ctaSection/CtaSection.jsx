@@ -14,21 +14,25 @@ function CtaSection() {
             </div>
 
             <div className="mr-subContainer">
-                <h4>Welcome to SquareUp</h4>
-                <div className="mr-p-container">
-                <p>Where collaboration, Expertise, and Client-Centricity Intersect to Shape the Future of Digital Innovation.</p>
+                
+                <div className='rtParagraphAndButton'>
+                    <h3>Welcome to SquareUp</h3>
+                    <div className="mr-p-container">
+                        <p>Where collaboration, Expertise, and Client-Centricity Intersect to Shape the Future of Digital Innovation.</p>
+                    </div>
                 </div>
                 <Button  
                 className="startProjcet"
                 name="Start Project"
-                width={170}
+                width="8.8vw"
                 height={63}
                 backgroundColor="var(--green50)"
                 color="var(--grey10)"
                 border="none"
-                borderRadius={6}
+                borderRadius={8}
                 fontSize={18}
                 />
+                
             </div>
 
         </section>

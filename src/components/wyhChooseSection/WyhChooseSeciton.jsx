@@ -4,15 +4,15 @@ function WyhChooseSeciton() {
     return (
         <section className="mr-wyhChooseUs">
 
-            <div className="mr-textContainer">
+            {/* <div className="mr-textContainer">
                 <img src="/img/backgrounds/waveToDown.png" alt="waveToDown" className="bg-wave" />
 
                 <h1>Why Choose SquareUp?</h1>
                 <p>Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results.</p>
-            </div>
+            </div> */}
 
             <div className="mr-container-card">
-                <div className="card-top">
+                <div className="mr-card-top">
 
                     <div className="mr-card">
                         <div className="mr-title-logo">
@@ -35,7 +35,7 @@ function WyhChooseSeciton() {
                     </div>
                 </div>
 
-                <div className="card-bottom">
+                <div className="mr-card-bottom">
                     <div className="mr-card">
 
                         <div className="mr-title-logo">

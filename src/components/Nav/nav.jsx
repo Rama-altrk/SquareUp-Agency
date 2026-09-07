@@ -13,7 +13,8 @@ const Nav = ({ items, activePath = 'Home', btnText }) => {
   };
 
   return (
-    <nav className="navbar">
+    <nav>
+      <div  className="navbar">
       <Logo />
 
       <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
@@ -49,7 +50,10 @@ const Nav = ({ items, activePath = 'Home', btnText }) => {
         {isOpen ? <FaTimes /> : <HiMenuAlt3 />}
         </button>
       </div>
+      </div>
+      <div className='rtNavBorder'></div>
     </nav>
+    
   );
 };
 
