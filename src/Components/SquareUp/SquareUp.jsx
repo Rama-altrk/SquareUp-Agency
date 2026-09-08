@@ -12,7 +12,7 @@ return (
         <div className='rtBackColorStart'></div>
         <div className='rtContentStart'>
             <div className="bs-square">
-                <img src="./public/img/squareIcon.png" alt="{title}" />
+                <img src="/img/squareIcon.png" alt="{title}" />
             </div>
             <h2>{title}</h2>
             <p>{description}</p>
