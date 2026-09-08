@@ -7,16 +7,6 @@ import './About.css'
 
 function About({ reviews }) {
   return (
-    <div className="bt-about">
-
-      <div className="header"   style={{
-        backgroundImage: "url('/img/backgrounds/waveToUp.png')",}} >
-        <h2 style={{color:COLORS.absolutefff}}>What our Clients say About us</h2>
-        <p style={{color:COLORS.grey90}}> 
-          At SquareUp, we take pride in delivering exceptional digital products and services that drive success for our clients. Here's what some of our satisfied clients have to say about their experience working with us
-        </p>
-      </div>
-
       <div className="bh-cards">
         {
         reviews.map((item, index) => (
@@ -54,7 +44,7 @@ function About({ reviews }) {
         )}
       </div>
 
-    </div>
+  
   );
 }
 

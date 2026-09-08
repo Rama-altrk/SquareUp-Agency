@@ -2,6 +2,7 @@
 import './Slider.css'
 import About from '../About/About'
 import { useState, useEffect } from 'react'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 const SMALL_BREAKPOINT = 992
 const LARGE_BREAKPOINT = 1440
 function getCardsPerView(width) {
@@ -42,11 +43,11 @@ function Slider({ cards }) {
   }
 
   return (
-    <div className='slider'>
+    <div className="slider">
       <div className="container">
-        <button className="arrow-btn left" onClick={prevSlide}>❮</button>
+        <button className="arrow-btn left" onClick={prevSlide}><FaChevronLeft/></button>
         <About reviews={visibleCards} />
-        <button className="arrow-btn right" onClick={nextSlide}>❯</button>
+        <button className="arrow-btn right" onClick={nextSlide}><FaChevronRight/></button>
       </div>
     </div>
   )
