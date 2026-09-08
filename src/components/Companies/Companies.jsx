@@ -1,10 +1,11 @@
 import { COLORS } from '../../assets/constants/colors'
+import { FONTS } from '../../assets/constants/fonts'
 import './Companies.css'
 function Companies({images,text}) {
   return (
     <>
     <div className='trusted'>
-      <p style={{color:COLORS.green99,display:'flex',justifyContent:'center',alignItems:'center'}}>{text}</p>
+      <p style={{color:COLORS.green99,display:'flex',justifyContent:'center',alignItems:'center',...FONTS.medium}}>{text}</p>
     </div>
      <div className='count'  style={{ backgroundColor: COLORS.grey10 }}>
     {
