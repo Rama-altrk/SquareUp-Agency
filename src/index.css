@@ -12,29 +12,19 @@ font-family: "Inter", sans-serif;
 body{
   background-color: var(--grey10);
 }
-/* .rtMainContainer{
-  padding-left: 5.55vw;
-  padding-right: 5.55vw;
-  padding-top: 85px;
-} */
+
 .rtMainContainer{
-  padding-left: 8.49vw;
-  padding-right: 8.385vw;
-  padding-top: 85px;
+  padding-left: 8.4vw;
+  padding-right: 8.4vw;
+  padding-top: 10.5vh;
 }
 
-/* 
-@media screen and (min-width: 1440px) {
-  .rtMainContainer{
-    padding-left: 9.2vw;
-    padding-right: 9.2vw;
-  }
-} */
+
 @media screen and (max-width: 1440px) {
   .rtMainContainer{
     padding-left: 5.55vw;
     padding-right: 5.55vw;
-    /* padding-top: 85px; */
+    padding-top: 9.9vh;
   }
 }
 

@@ -6,7 +6,20 @@ import Home from './pages/Home/Home';
 import Work from './pages/Work/Work';
 import Process from './pages/Process/Process';
 import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+// <<<<<<< HEAD
+// =======
+// <<<<<<< Belasan-Salhab-branch
+
+// import ServicesCards from './Components/ServicesCards/ServicesCards'
+// import SquareUp from './Components/SquareUp/SquareUp'
+// import ProjectCards from './Components/ProjectCards/ProjectCards'
+// =======
+// import SectionHeading from './components/SectionHeading/SectionHeading';
+// import Hero from './components/Hero/Hero';
+// >>>>>>> bb1cb34019e06d67b2b29c688efbf59374d43af7
   
+// >>>>>>> main
 function App() {
   const navItems = [
     { content: 'Home', path: '/' },
@@ -29,11 +42,21 @@ function App() {
           <Route path="/work" element={<Work/>} />
           <Route path="/process" element={<Process/>} />
           <Route path="/about" element={<About/>} />
+          <Route path="/Contact" element={<Contact/>} />
         </Routes>
       </div>
       <Footer />
     </>
     </Router>
+//     <div className='mainContainer'>
+//       <ServicesCards/>
+//       <SquareUp 
+//           title="Thank you for your Interest in SquareUp."
+//           description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
+//           button={<button>Start Project</button>}
+// />
+// <ProjectCards/>
+//     </div>
   )
 }
 

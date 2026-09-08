@@ -1,7 +1,11 @@
 import React from 'react'
-import WyhChooseSeciton from '../../components/wyhChooseSection/WyhChooseSeciton'
 import Hero from '../../components/Hero/Hero'
 import SectionHeading from '../../components/SectionHeading/SectionHeading'
+import ServicesCards from '../../components/ServicesCards/ServicesCards'
+import SquareUp from '../../components/SquareUp/SquareUp'
+import WyhChooseSeciton from '../../components/wyhChooseSection/WyhChooseSeciton'
+
+
 
 export default function Home() {
     return (
@@ -14,6 +18,8 @@ export default function Home() {
                 description="Transform your brand with our innovative digital solutions that captivate and engage your audience."
                 background="straight.png"
             />
+            
+            <ServicesCards/>
 
             <SectionHeading
                 title="Why Choose SquareUp?"
@@ -30,9 +36,30 @@ export default function Home() {
             <SectionHeading
                 title="Frequently Asked Questions"
                 description="Still you have any questions? Contact our Team via hello@squareup.com"
-                background="doubleWaveToUp.png
-                "
+                background="doubleWaveToUp.png"
+            />
+            
+            <SquareUp 
+                title="Thank you for your Interest in SquareUp."
+                description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
+                
             />
         </>
+// =======
+// import ServicesCards from './components/ServicesCards/ServicesCards'
+// import SquareUp from './Components/SquareUp/SquareUp'
+
+
+// export default function Home() {
+//     return (
+//         <div>
+//         <ServicesCards/>
+//         <SquareUp 
+//             title="Thank you for your Interest in SquareUp."
+//             description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
+//             button={<button>Start Project</button>}
+// />
+//         </div>
+// >>>>>>> bb1cb34019e06d67b2b29c688efbf59374d43af7
     )
 }

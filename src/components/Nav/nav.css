@@ -5,15 +5,15 @@
 .navbar{
   position: fixed;
   z-index: 9;
-  width: 100vw;
+  width: 100%;
   background-color: var(--grey10);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
   padding: 20px 8.4vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   border-bottom: 1px solid var(--grey15);  
 }
 

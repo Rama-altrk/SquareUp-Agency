@@ -20,7 +20,7 @@
     /* padding-right: 20px; */
     padding: 80px;
     border: 1px solid var(--grey15);
-    border-bottom: none;
+    /* border-bottom: none; */
     display: flex;
     flex-direction: column;
     gap: 50px;

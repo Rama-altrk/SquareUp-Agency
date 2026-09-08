@@ -1,11 +1,11 @@
 import './SectionHeading.css';
 
-function SectionHeading({ title, description, background }) {
+function SectionHeading({ title, description, background, className}) {
   
 
   return (
     <section
-      className="section-heading"
+      className={`${className} section-heading`}
     >
       <img src={`/img/backgrounds/${background}`} alt="background wave" className='rtBackImg'/>
       <div className='rtLayoutOverly'></div>
