@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 import Button from '../Button/Button'
 import './CtaSection.css'
 
-function CtaSection() {
+function CtaSection({className}) {
     return (
-        <section className="mr-sectionCta">
+        <section className={`${className} mr-sectionCta`}>
 
             <div className="mr-container">
                 <div className="mr-logo-cta"><img src="/img/squareIcon.png" alt="squareIcon" /></div>
@@ -14,21 +15,26 @@ function CtaSection() {
             </div>
 
             <div className="mr-subContainer">
-                <h4>Welcome to SquareUp</h4>
-                <div className="mr-p-container">
-                <p>Where collaboration, Expertise, and Client-Centricity Intersect to Shape the Future of Digital Innovation.</p>
+                
+                <div className='rtParagraphAndButton'>
+                    <h3>Welcome to SquareUp</h3>
+                    <div className="mr-p-container">
+                        <p>Where collaboration, Expertise, and Client-Centricity Intersect to Shape the Future of Digital Innovation.</p>
+                    </div>
                 </div>
-                <Button  
-                className="startProjcet"
-                name="Start Project"
-                width={170}
-                height={63}
-                backgroundColor="var(--green50)"
-                color="var(--grey10)"
-                border="none"
-                borderRadius={6}
-                fontSize={18}
-                />
+                <Link to= "/work">
+                    <Button  
+                    className="startProjcet"
+                    name="Start Project"
+                    width="8.8vw"
+                    height={63}
+                    backgroundColor="var(--green50)"
+                    color="var(--grey10)"
+                    border="none"
+                    borderRadius={8}
+                    fontSize={18}
+                    />
+                </Link>
             </div>
 
         </section>

@@ -12,22 +12,26 @@ font-family: "Inter", sans-serif;
 body{
   background-color: var(--grey10);
 }
+
 .rtMainContainer{
-  padding-left: 5.55%;
-  padding-right: 5.55%;
+  padding-left: 8.4vw;
+  padding-right: 8.4vw;
+  padding-top: 10.5vh;
 }
 
 
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 1440px) {
   .rtMainContainer{
-    padding-left: 9.2%;
-    padding-right: 9.2%;
+    padding-left: 5.55vw;
+    padding-right: 5.55vw;
+    padding-top: 9.9vh;
   }
 }
 
 @media screen and (max-width: 992px) {
   .rtMainContainer{
-    padding-left: 4%;
-    padding-right: 4%;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 106px;
   }
 }

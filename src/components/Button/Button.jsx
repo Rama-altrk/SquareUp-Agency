@@ -1,7 +1,7 @@
 import './Button.css'
 function Button ({name, width , height , fontSize, borderRadius, backgroundColor, color , border ,className } ) {
     return (
-        <div>
+        <>
             <button  className={`${className} btn`} style={{width : width
                 , height: height 
                 , fontSize: fontSize
@@ -11,7 +11,7 @@ function Button ({name, width , height , fontSize, borderRadius, backgroundColor
                 , border: border
                 }}>{name}
                 </button>
-        </div>
+        </>
     )
 }
 export default Button
