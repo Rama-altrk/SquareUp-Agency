@@ -24,9 +24,7 @@
     border-radius: 10px;
     justify-content: center;
     background-color: var(--grey10);
-    background-image: radial-gradient(circle at top right, rgba(153, 255, 51, 0.07)10%, rgba(255, 255, 255, 0) 40%);
-
-
+    background-image: radial-gradient(circle at top right, rgba(153, 255, 51, 0.07)10%, rgba(255, 255, 255, 0) 80%);
 
 
     img {
@@ -46,9 +44,8 @@
         font-weight: var(--fw-regular);
         font-size: 20px;
         line-height: 150%;
-        letter-spacing: -0.6%;
         color: var(--grey90);
-        margin: 40px 4.166% 0 80px;
+        padding: 40px 4.166% 0 80px;
     }
 }
 
@@ -101,10 +98,10 @@
         min-height: 267px;
 
         p {
+            padding: 24px 30px 0 30px;
             font-size: 14px;
             line-height: 150%;
             letter-spacing: -0.6%;
-            margin: 24px 30px 0 30px;
             height: 105px;
         }
     }
@@ -139,11 +136,9 @@
         flex-wrap: wrap;
 
         p {
-            margin-left: 60px;
-            margin-top: 30px;
+            padding: 30px 60px 0 60px;
             font-size: 16px;
             line-height: 150%;
-            letter-spacing: -0.6%;
         }
     }
 

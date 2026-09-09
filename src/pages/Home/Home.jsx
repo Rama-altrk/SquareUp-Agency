@@ -39,42 +39,42 @@ export default function Home() {
         }
     ]
     return (
-// <<<<<<< rasheed
-       
-// =======
+        // <<<<<<< rasheed
+
+        // =======
         <>
-            
-            <Hero /> 
-            
+
+            <Hero />
+
             <SectionHeading
                 title="Our Services"
                 description="Transform your brand with our innovative digital solutions that captivate and engage your audience."
                 background="straight.png"
             />
-            
-            <ServicesCards/>
+
+            <ServicesCards />
 
             <SectionHeading
                 title="Why Choose SquareUp?"
                 description="Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results."
                 background="waveToDown.png"
             />
-             
+
             <div>
                 <div className="container-Card">
                     {
                         Card.map((item) => {
-                        return (
-                        <CardWyhChoose
-                        title={item.title}
-                        image={item.image}
-                        contnet={item.content}
-                        />
-                        )
+                            return (
+                                <CardWyhChoose
+                                    title={item.title}
+                                    image={item.image}
+                                    contnet={item.content}
+                                />
+                            )
                         })
                     }
                 </div>
-            </div>  
+            </div>
 
             <SectionHeading
                 title="What our Clients say About us"
@@ -87,13 +87,13 @@ export default function Home() {
                 description="Still you have any questions? Contact our Team via hello@squareup.com"
                 background="doubleWaveToUp.png"
             />
-            
-            <SquareUp 
+
+            <SquareUp
                 title="Thank you for your Interest in SquareUp."
                 description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
-                
+
             />
         </>
-// >>>>>>> main
+        // >>>>>>> main
     )
 }
