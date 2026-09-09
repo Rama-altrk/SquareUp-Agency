@@ -1,10 +1,7 @@
 import './About.css'
-// <<<<<<< rasheed
 import Container from '../../components/Container/Container'
 import CardNumber from '../../components/CardNumaber/CardNumber'
 import AboutSquareUpSection from '../../components/AboutSquareUpSection/AboutSquareUpSection'
-// =======
-// >>>>>>> main
 import CtaSection from "../../components/ctaSection/CtaSection";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
@@ -70,7 +67,6 @@ export default function About() {
     ]
     return (
         <>
-// <<<<<<< rasheed
             <SectionHeading
                 className= "rtAboutHeading"
                 title="About Us"
@@ -100,9 +96,7 @@ export default function About() {
                     })
                 }
             </Container>
-// =======
-           
-// >>>>>>> main
+        
             <CtaSection/>
         </>
     )
