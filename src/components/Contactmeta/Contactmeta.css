@@ -1,5 +1,5 @@
 .bh-Contactmeta{
-    margin-top: 30px;
+    margin-bottom: 80px;
     height: 154px;
     color: var(--grey90);
      border: 1px solid var(--grey15);
@@ -102,7 +102,7 @@
 }
 @media (max-width:1440px){
 .bh-Contactmeta{
-    margin-top: 30px;
+    margin-bottom: 60px;
     height: 144px;
     .bh-Contactmeta1{
     height: 144px;
@@ -142,7 +142,7 @@ width: 158px;
 }
 @media (max-width:992px) {
     .bh-Contactmeta{
-    margin-top: 30px;
+    margin-bottom: 0px;
     height: 237px;
     display: flex;
     flex-direction:  column;

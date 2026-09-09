@@ -2,8 +2,8 @@
     height: 166px;
     background-color: var(--grey10);
     width: 100%;
-    margin-top: 50px;
-    border: 2px solid var(--grey15);
+    /* margin-top: 50px; */
+    border: 1px solid var(--grey15);
     display: flex;
     justify-content: center;
     align-items: center;

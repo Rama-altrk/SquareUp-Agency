@@ -14,25 +14,26 @@
   .arrow-btn {
   position: absolute;
   top: 50%;
- width: 30px;
- height: 30px;
- border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
  /* border: none; */
- background-color: var(--green50);
- color: black;
+  background-color: var(--green50);
+  border: 1px solid var(--green50);
+  color: black;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
- .arrow-btn.left {
+.arrow-btn.left {
   left: -30px;
 }
 .arrow-btn.right {
   right: -20px;
 } 
 }
- @media screen and (max-width:1440px){
+@media screen and (max-width:1440px){
   .container{
 .arrow-btn{
     height: 30px;
@@ -50,8 +51,8 @@
 
   }
 
-   @media screen and (max-width:992px){
-     .container{
+@media screen and (max-width:992px){
+    .container{
       align-items: center;
       width: 100%;
     max-width: 1280px;
@@ -72,4 +73,4 @@ top: 150px;
 
 }
 
-  }
+  } 
