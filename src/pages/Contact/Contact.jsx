@@ -1,3 +1,6 @@
+
+import Contactmeta from "../../components/Contactmeta/Contactmeta";
+import Socialmedia from "../../components/Socialmedia/Socialmedia";
 import './Contact.css'
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import SquareUp from '../../components/SquareUp/SquareUp';
@@ -13,6 +16,8 @@ export default function Contact() {
         background="doubleWaveToUp.png"
       />
       <CtaSection className= "rtCtaContact"/>
+       <Socialmedia></Socialmedia>
+        <Contactmeta></Contactmeta>
     </>
   )
 }
