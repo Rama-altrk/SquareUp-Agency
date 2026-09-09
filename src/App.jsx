@@ -1,12 +1,49 @@
+
 import './App.css'
-import Form from './assets/components/Form/Form'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from './components/Nav/nav'
+import Footer from './components/Footer/footer'
+import Home from './pages/Home/Home';
+import Work from './pages/Work/Work';
+import Process from './pages/Process/Process';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+
 
 function App() {
+  const navItems = [
+    { content: 'Home', path: '/' },
+    { content: 'Work', path: '/work' },
+    { content: 'Process', path: '/process' },
+    { content: 'About', path: '/about' },
+  ];
 
   return (
-    <div className='rtMainContainer'>
-    </div>
+    <Router>
+    <>
+      <Nav 
+        items={navItems} 
+        activePath="Home" 
+        btnText="Contact Us" 
+      /> 
+      <div className='rtMainContainer'>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/work" element={<Work/>} />
+          <Route path="/process" element={<Process/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/Contact" element={<Contact/>} />
+        </Routes>
+      </div>
+      <Footer />
+
+      
+    </>
+    </Router>
   )
 }
 
 export default App
+
+
+
