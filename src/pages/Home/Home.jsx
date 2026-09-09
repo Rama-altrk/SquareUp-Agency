@@ -1,15 +1,15 @@
-import React from 'react'
-import Companies from '../../components/Companies/Companies';
-import Slider from '../../components/Slider/Slider';
+import './Home.css'
 import Hero from '../../components/Hero/Hero'
+import Companies from '../../components/Companies/Companies';
 import SectionHeading from '../../components/SectionHeading/SectionHeading'
 import ServicesCards from '../../components/ServicesCards/ServicesCards'
+import CardWyhChoose from '../../components/CardWyhChoose/CardWyhChoose'
+import Slider from '../../components/Slider/Slider';
 import SquareUp from '../../components/SquareUp/SquareUp'
-import WyhChooseSeciton from '../../components/wyhChooseSection/WyhChooseSeciton'
-
 
 
 export default function Home() {
+
       let images=[
   '/img/homeImg/zapier.png',
   '/img/homeImg/spotify.png',
@@ -62,6 +62,38 @@ const reviews = [
     authorTitle: "CEO of FitLife Tracker"
   }
 ];
+
+
+    const Card = [
+        {
+            id: 1,
+            image: "/img/homeImg/ExpertiseIcon.png",
+            title: "Expertise",
+            content: "Our team consists of highly skilled professionals who have a deep understanding of the digital landscape. We stay updated with the latest industry trends and best practices to deliver cutting-edge solutions.",
+        },
+
+        {
+            id: 2,
+            image: "/img/homeImg/ClientCentricIcon.png",
+            title: "Client-Centric Approach",
+            content: "We prioritize our clients and their unique needs. We listen to your ideas, challenges, and goals, and tailor our services to meet your specific requirements. Your success is our success.",
+
+        },
+
+        {
+            id: 3,
+            image: "/img/homeImg/Results-DrivenIcon.png",
+            title: "Results-Driven Solutions",
+            content: "Our primary focus is on delivering results. We combine creativity and technical expertise to create digital products that drive business growth, enhance user experiences, and provide a competitive advantage.",
+        },
+        {
+            id: 4,
+            image: "/img/homeImg/CollaborativeIcon.png",
+            title: "Collaborative Partnership",
+            content: "We value long-term relationships with our clients. We see ourselves as your digital partner, providing ongoing support, maintenance, and updates to ensure your digital products continue to thrive.",
+        }
+    ]
+
     return (
         <>
             
@@ -82,6 +114,22 @@ const reviews = [
                 description="Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results."
                 background="waveToDown.png"
             />
+             
+            <div>
+                <div className="container-Card">
+                    {
+                        Card.map((item) => {
+                        return (
+                        <CardWyhChoose
+                        title={item.title}
+                        image={item.image}
+                        contnet={item.content}
+                        />
+                        )
+                        })
+                    }
+                </div>
+            </div>  
 
             <SectionHeading
                 title="What our Clients say About us"
@@ -102,21 +150,5 @@ const reviews = [
                 
             />
         </>
-// =======
-// import ServicesCards from './components/ServicesCards/ServicesCards'
-// import SquareUp from './Components/SquareUp/SquareUp'
-
-
-// export default function Home() {
-//     return (
-//         <div>
-//         <ServicesCards/>
-//         <SquareUp 
-//             title="Thank you for your Interest in SquareUp."
-//             description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
-//             button={<button>Start Project</button>}
-// />
-//         </div>
-// >>>>>>> bb1cb34019e06d67b2b29c688efbf59374d43af7
     )
 }
