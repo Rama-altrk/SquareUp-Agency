@@ -2,7 +2,7 @@ import './About.css'
 import Container from '../../components/Container/Container'
 import CardNumber from '../../components/CardNumaber/CardNumber'
 import AboutSquareUpSection from '../../components/AboutSquareUpSection/AboutSquareUpSection'
-import CtaSection from "../../components/ctaSection/CtaSection";
+import CtaSection from "../../Components/CtaSection/CtaSection";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
 
