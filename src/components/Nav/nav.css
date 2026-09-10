@@ -1,12 +1,19 @@
-
+/* nav{
+  display: flex;
+  flex-direction: column;
+} */
 .navbar{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding: 20px 9.2vw;
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+  background-color: var(--grey10);
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
+  padding: 20px 8.4vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   border-bottom: 1px solid var(--grey15);  
 }
 
@@ -62,6 +69,10 @@
 .menu-toggle:hover {
   opacity: 0.8;
 }
+
+/* .rtNavBorder{
+  border: 1px solid var(--grey15);
+} */
 @media (max-width: 1440px){
   .navbar{
     padding: 20px 5.5vw;

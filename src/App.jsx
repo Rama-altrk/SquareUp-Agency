@@ -1,3 +1,4 @@
+
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/nav'
@@ -6,6 +7,8 @@ import Home from './pages/Home/Home';
 import Work from './pages/Work/Work';
 import Process from './pages/Process/Process';
 import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+
 
 function App() {
 
@@ -30,12 +33,18 @@ function App() {
           <Route path="/work" element={<Work/>} />
           <Route path="/process" element={<Process/>} />
           <Route path="/about" element={<About/>} />
+          <Route path="/Contact" element={<Contact/>} />
         </Routes>
       </div>
       <Footer />
+
+      
     </>
     </Router>
   )
 }
 
 export default App
+
+
+

@@ -1,5 +1,5 @@
 .footer-container {
-  padding: 50px 9.2vw;
+  padding: 50px 8.4vw;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -39,6 +39,7 @@
 }
 
 .social-wrapper {
+  max-width: 402px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -79,6 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   text-decoration: none;
   transition: transform 0.2s, border-color 0.2s;
 }

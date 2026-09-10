@@ -13,7 +13,8 @@ const Nav = ({ items, activePath = 'Home', btnText }) => {
   };
 
   return (
-    <nav className="navbar">
+    <nav>
+      <div  className="navbar">
       <Logo />
 
       <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
@@ -32,24 +33,27 @@ const Nav = ({ items, activePath = 'Home', btnText }) => {
           );
         })}
       </ul>
-
-      <Button className="nav-btn"
-        name= "Contact Us"
-        width= "135px"
-        height= "59px"
-        fontSize= "18px"
-        borderRadius= "8px"
-        backgroundColor= "var(--green50)"
-        color= "var(--grey15)"
-        border= "none"
-      />
-      
+      <Link to="/Contact">
+        <Button className="nav-btn"
+          name= "Contact Us"
+          width= "135px"
+          height= "59px"
+          fontSize= "18px"
+          borderRadius= "8px"
+          backgroundColor= "var(--green50)"
+          color= "var(--grey15)"
+          border= "none"
+        />
+      </Link>
       <div className='rtBackMenuToggle'>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
         {isOpen ? <FaTimes /> : <HiMenuAlt3 />}
         </button>
       </div>
+      </div>
+      <div className='rtNavBorder'></div>
     </nav>
+    
   );
 };
 
