@@ -8,10 +8,8 @@ import ServicesCards from '../../components/ServicesCards/ServicesCards'
 import CardWyhChoose from '../../components/CardWyhChoose/CardWyhChoose'
 import Slider from '../../components/Slider/Slider';
 import SquareUp from '../../components/SquareUp/SquareUp'
-
-
-
 import Faq from '../../components/FaqSection/faq'
+
 export default function Home() {
 
        const faqList = [
@@ -142,60 +140,68 @@ const reviews = [
     ]
 
     return (
+
         <>
             
             <Hero /> 
             <Companies 
         text="Trusted By 250+ Companies"
         images={images}/>
+
             <SectionHeading
                 title="Our Services"
                 description="Transform your brand with our innovative digital solutions that captivate and engage your audience."
                 background="straight.png"
             />
-            
-            <ServicesCards/>
+
+            <ServicesCards />
 
             <SectionHeading
                 title="Why Choose SquareUp?"
                 description="Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results."
                 background="waveToDown.png"
             />
-             
+
             <div>
                 <div className="container-Card">
                     {
                         Card.map((item) => {
-                        return (
-                        <CardWyhChoose
-                        title={item.title}
-                        image={item.image}
-                        contnet={item.content}
-                        />
-                        )
+                            return (
+                                <CardWyhChoose
+                                    title={item.title}
+                                    image={item.image}
+                                    contnet={item.content}
+                                />
+                            )
                         })
                     }
                 </div>
-            </div>  
+            </div>
 
             <SectionHeading
                 title="What our Clients say About us"
                 description="At SquareUp, we take pride in delivering exceptional digital products and services that drive success for our clients. Here's what some of our satisfied clients have to say about their experience working with us"
                 background="waveToUp.png"
             />
-            <Slider cards={reviews}></Slider>
+            {/* <Slider cards={reviews}></Slider> */}
 
             <SectionHeading
                 title="Frequently Asked Questions"
                 description="Still you have any questions? Contact our Team via hello@squareup.com"
                 background="doubleWaveToUp.png"
             />
+// <<<<<<< HalaHmedoush
             <Faq items={faqList} />
-            <SquareUp 
+//             <SquareUp 
+// =======
+
+            <SquareUp
+// >>>>>>> main
                 title="Thank you for your Interest in SquareUp."
                 description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
-                
+
             />
         </>
+
     )
 }

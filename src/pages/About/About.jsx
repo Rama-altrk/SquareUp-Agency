@@ -73,7 +73,7 @@ export default function About() {
                 description="Welcome to SquareUp, where collaboration, expertise, and client-centricity intersect to shape the future of digital innovation."
                 background="straight.png"
             />
-            <Container>
+            {/* <Container>
 
                 <AboutSquareUpSection />
                 <div className="ourStory">
@@ -95,7 +95,7 @@ export default function About() {
                         )
                     })
                 }
-            </Container>
+            </Container> */}
         
             <CtaSection/>
         </>
