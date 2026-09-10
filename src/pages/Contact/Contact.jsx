@@ -1,4 +1,5 @@
 
+import Faq from "../../components/FaqSection/faq"
 import Contactmeta from "../../components/Contactmeta/Contactmeta";
 import Socialmedia from "../../components/Socialmedia/Socialmedia";
 import './Contact.css'
@@ -21,7 +22,9 @@ export default function Contact() {
           description="Still you have any questions? Contact our Team via hello@squareup.com"
           background="doubleWaveToUp.png"
       />
+      <Faq />
       <CtaSection className= "rtCtaContact"/>
     </>
   )
 }
+

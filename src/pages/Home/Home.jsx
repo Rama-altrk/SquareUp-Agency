@@ -1,3 +1,5 @@
+
+
 import './Home.css'
 import Hero from '../../components/Hero/Hero'
 import Companies from '../../components/Companies/Companies';
@@ -6,9 +8,52 @@ import ServicesCards from '../../components/ServicesCards/ServicesCards'
 import CardWyhChoose from '../../components/CardWyhChoose/CardWyhChoose'
 import Slider from '../../components/Slider/Slider';
 import SquareUp from '../../components/SquareUp/SquareUp'
-
+import Faq from '../../components/FaqSection/faq'
 
 export default function Home() {
+
+       const faqList = [
+        {
+      id: "01",
+      question: "What services does SquareUp provide?",
+      answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+        },
+        {
+        id: "02",
+        question: "How can SquareUp help my business?",
+        answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+        },
+        {
+         id: "03",
+         question: "What industries does SquareUp work with?",
+         answer:"SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+        },
+        {
+            id: "04",
+            question: "How long does it take to complete a project with SquareUp?",
+            answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+        },
+        {
+            id: "05",
+            question:"Do you offer ongoing support and maintenance after the project is completed?",
+            answer:"SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+        },
+        {
+            id: "06",
+            question: "Can you work with existing design or development frameworks?",
+            answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+        },
+        {
+            id: "07",
+            question: "How involved will I be in the project development process?",
+            answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+        },
+        {
+            id:"08",
+            question: "Can you help with website or app maintenance and updates?",
+            answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+        },
+    ]
 
       let images=[
   '/img/homeImg/zapier.png',
@@ -145,8 +190,13 @@ const reviews = [
                 description="Still you have any questions? Contact our Team via hello@squareup.com"
                 background="doubleWaveToUp.png"
             />
+// <<<<<<< HalaHmedoush
+            <Faq items={faqList} />
+//             <SquareUp 
+// =======
 
             <SquareUp
+// >>>>>>> main
                 title="Thank you for your Interest in SquareUp."
                 description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
 

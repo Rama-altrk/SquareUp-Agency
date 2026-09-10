@@ -11,6 +11,7 @@ import Contact from './pages/Contact/Contact';
 
 
 function App() {
+
   const navItems = [
     { content: 'Home', path: '/' },
     { content: 'Work', path: '/work' },
