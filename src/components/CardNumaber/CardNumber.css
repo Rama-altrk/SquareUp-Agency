@@ -1,7 +1,6 @@
 .card {
     border: 1px solid var(--grey15);
     width: 100% !important;
-    max-width: 797px;
 
     p {
         margin: 0 50px 100px 50px;
