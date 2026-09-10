@@ -12,7 +12,7 @@
   flex-direction: column;
   padding: 100px 80px;
   max-width: 798px;
-  width: 100%;
+  /* width: 100%; */
 
   .bh3{
     font-size: 28px;
