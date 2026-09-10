@@ -190,13 +190,12 @@ const reviews = [
                 description="Still you have any questions? Contact our Team via hello@squareup.com"
                 background="doubleWaveToUp.png"
             />
-// <<<<<<< HalaHmedoush
+
             <Faq items={faqList} />
-//             <SquareUp 
-// =======
+
 
             <SquareUp
-// >>>>>>> main
+
                 title="Thank you for your Interest in SquareUp."
                 description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
 
