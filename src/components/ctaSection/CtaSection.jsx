@@ -13,7 +13,6 @@ function CtaSection({className}) {
                     <p>Combining the power of design, engineering, and project management to create transformative digital experiences. They invite you to join them on  their journey and discover how they can help bring your digital ideas to life.</p>
                 </div>
             </div>
-
             <div className="mr-subContainer">
                 
                 <div className='rtParagraphAndButton'>
