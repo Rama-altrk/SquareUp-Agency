@@ -5,6 +5,7 @@ import Socialmedia from "../../components/Socialmedia/Socialmedia";
 import './Contact.css'
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import CtaSection from '../../components/ctaSection/CtaSection';
+import Form from "../../Components/Form/Form";
 
 export default function Contact() {
   return (
@@ -16,6 +17,7 @@ export default function Contact() {
         background="doubleWaveToUp.png"
       />
       <Socialmedia/>
+      <Form/>
       <Contactmeta/>
       <SectionHeading
           title="Frequently Asked Questions"
