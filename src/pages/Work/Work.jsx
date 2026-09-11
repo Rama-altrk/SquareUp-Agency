@@ -3,6 +3,7 @@ import ProjectCards from '../../components/ProjectCards/ProjectCards'
 import SectionHeading from '../../components/SectionHeading/SectionHeading'
 import SquareUp from '../../components/SquareUp/SquareUp'
 // import AtSquareUpSection from '../../components/AtSquareUpSection/AtSquareUpSection'
+import TextBeforCard from '../../Components/TextBeforCard/TextBeforCard'
 
 export default function Work() {
   return (
@@ -13,10 +14,10 @@ export default function Work() {
         background="waveToUp.png"
         className= "rtWorkHeading"
       />
-      {/* <AtSquareUpSection
+      <TextBeforCard
         description= "We have had the privilege of working with a diverse range of clients and delivering exceptional digital products that drive success."
         subTitle= "Here are ten examples of our notable works:"
-      /> */}
+      />
       <ProjectCards/>
       <SquareUp
         className= "rtWorkSquareUp"
