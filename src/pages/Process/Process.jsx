@@ -92,7 +92,7 @@ export default function Process() {
           description= "We follow a structured and collaborative process to ensure the successful delivery of exceptional digital products. Our process combines industry best practices, creative thinking, and a client-centric approach."
           subTitle= "Here's an overview of our typical process:"
       />
-      <Container>
+      {/* <Container>
         
         {
           Card.map((item) => {
@@ -109,7 +109,7 @@ export default function Process() {
             )
           })
         }
-      </Container>
+      </Container> */}
       <SquareUp 
         title="Thank you for your Interest in SquareUp."
         description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
