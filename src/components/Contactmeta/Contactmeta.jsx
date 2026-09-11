@@ -20,11 +20,7 @@ function Contactmeta() {
                 <div className="big"><a href="#" ><div className="bh-iface"><FaFacebookF style={{color:COLORS.grey15,fontSize:20}}/></div></a></div>
               <div className="big"><a href="#" ><div className="bh-itwitter"><FaTwitter style={{color:COLORS.green50,fontSize:20}}/></div></a></div>
               <div className="big">  <a href="#"><div className="bh-linkedin"><FaLinkedinIn style={{color:COLORS.grey15,fontSize:20}}/></div></a></div>
-
-
-
-
-            </div>
+          </div>
             
            </div>
         </div>
