@@ -12,7 +12,7 @@
   background-image: url(/img/squares.png);
   background-repeat: repeat;
   z-index: -2;
-  min-width: 100vw;
+  width: 100%;
   height: 100vh;
   right: 1px;
   opacity: 50%;
@@ -86,17 +86,17 @@
 .hero-bg-wrapper {
   position: relative;
   width: 100%;
-  height: 454px;
 }
 
 .hero-bg {
   position: absolute;
-  top: -186px;
-  top: -112px;
+  top: -170px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
+  height: 448px;
   z-index: -1;
+  object-fit: cover;
 }
 
 .trusted-badge {
@@ -142,8 +142,9 @@
     }
   }
 
-  .hero-bg-wrapper {
+  .hero-bg{
     height: 402px;
+    top: -130px;
   }
 
   .hero-buttons{
@@ -174,7 +175,8 @@
 
 @media (max-width: 992px) {
   .hero {
-    height: 77vh;
+    width: 100vw;
+    margin-left: -4vw;
     height: 566px;
     border: none;
     border-bottom: 1px solid var(--grey15);
@@ -210,14 +212,9 @@
     }
   }
 
-  .hero-bg-wrapper {
-    min-height: 248px;
-  }
 
   .hero-bg{
-    top: -131px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: -46px;
     height: 248px;
     width: 859px;
     object-fit: contain;

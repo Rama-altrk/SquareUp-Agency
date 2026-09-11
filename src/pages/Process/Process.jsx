@@ -88,7 +88,7 @@ export default function Process() {
         background="doubleWaveToUp.png"
       />
       
-      {/* <Container>
+      <Container>
         <AtSquareUpSection />
         {
           Card.map((item) => {
@@ -105,7 +105,7 @@ export default function Process() {
             )
           })
         }
-      </Container> */}
+      </Container>
       <SquareUp 
         title="Thank you for your Interest in SquareUp."
         description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
