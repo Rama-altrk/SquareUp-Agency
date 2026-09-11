@@ -62,13 +62,15 @@
   height: 420px;
   /* height: auto; */
     display: flex;
+  
     .bh-card{
   height: 420px;
   display: flex;
   flex-direction: column;
   padding: 80px 60px;
-  max-width: 640px;
+  /* max-width: 640px; */
   width: 50%;
+
   
   .bh3{
       font-size: 20px;
@@ -96,15 +98,9 @@
 }
 .profile-info {
    padding-left: 12px ;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* padding-left: 18px ; */
-/* max-width: 307px; */
-/* min-height: 45px; */
 }
 .bh-author{
   font-size: 16px;
-  /* font-weight: 500; */
 }
 .bh-author-title{
   font-size: 12px;

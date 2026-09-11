@@ -1,7 +1,7 @@
 
 .slider {
   width: 100%;
-  height: auto;
+  /* height: auto; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,6 +64,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: auto;
   .bh-container {
   /* margin-bottom: 0%; */
   position: relative;
@@ -95,7 +96,6 @@
   right: 2px;
 } 
 }
-  
 }
 
   } 
