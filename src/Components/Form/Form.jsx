@@ -1,8 +1,8 @@
 import { COLORS } from "../../assets/constants/colors";
 import { FONTS } from '../../assets/constants/fonts';
 import Button from "../Button/Button";
+import CheckboxContainer from "../CheckboxContainer/CheckboxContainer";
 import InputsField from "../InputsField/InputsField";
-
 import './Form.css';
 
 
@@ -28,38 +28,35 @@ export default function Form() {
                 <span style={{...FONTS.medium , color: COLORS.absolutefff}}>Why are you contacting us?</span>
                 <div className="rtContainerChecks">
                     <div className="rtRowChecks">
-                        {/* <label htmlFor="web">
-                            <input type="checkbox" name="webDesign" id="web" />
-                            <div className="rtMyCheckbox"></div>
-                            <span>Web Design</span>
-                        </label> */}
-                        <div>
-                            <input type="checkbox" name="webDesign" id="web" />
-                            <label htmlFor="web">Web Design</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="Collaboration" id="collaboration" />
-                            <label htmlFor="collaboration">Collaboration</label>
-                        </div>
+                        <CheckboxContainer
+                            id= "web"
+                            name= "webDesign"
+                            labelName= "Web Design"
+                        />
+                        <CheckboxContainer
+                            id= "collaboration"
+                            name= "collaboration"
+                            labelName= "Collaboration"
+                        />
                     </div>
                     <div className="rtRowChecks">
-                        <div>
-                            <input type="checkbox" name="app" id="app" />
-                            <label htmlFor="app">Mobile App Design</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="other" id="others" />
-                            <label htmlFor="others">Others</label>
-                        </div>
+                        <CheckboxContainer
+                            id= "app"
+                            name= "app"
+                            labelName= "Mobile App Design"
+                        />
+                        <CheckboxContainer
+                            id= "others"
+                            name= "other"
+                            labelName= "Others"
+                        />
                     </div>
                 </div>
             </div>
             <div className="rtThirdRow">
                 <label htmlFor="message" style={{...FONTS.medium , color: COLORS.absolutefff}}>Your Message</label>
                 <div>
-                    {/* <input name="message" id="message" style={{...FONTS.regular , color: COLORS.grey40}} placeholder="Type here"/> */}
                     <textarea name="message" id="message" placeholder="Type here" style={{...FONTS.regular , color: COLORS.absolutefff}}></textarea>
-                    {/* <div></div> */}
                 </div>
             </div>
             <Button
