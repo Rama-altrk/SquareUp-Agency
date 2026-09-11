@@ -11,7 +11,7 @@ import SquareUp from '../../components/SquareUp/SquareUp'
 
 
 
-import Faq from '../../components/FaqSection/faq'
+import Faq from '../../components/FaqSection/Faq'
 export default function Home() {
 
        const faqList = [

@@ -1,7 +1,5 @@
-
+  
 .HM-faq-section {
-  padding-top: 80px;
-  padding-bottom: 80px;
   background-color: var(--grey10);
   color: var(--absolutefff);
   font-family: var(--font-primary);
@@ -19,6 +17,8 @@
 }
 
 .HM-faq-column {
+  padding-top: 80px;
+  padding-bottom: 80px;
   display: flex;
   flex-direction: column;
 }
@@ -28,15 +28,29 @@
 }
 
 .HM-faq-card {
-  padding: 24px 30px;
+  height: 140px;
+  min-height: 140px;
+  padding: 30px 50px;
   background-color: var(--grey10);
   border-bottom: 1px solid var(--grey15);
   cursor: pointer;
   transition: border-color 0.3s ease, background-color 0.3s ease;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: center;
+  gap: 30px;
   box-sizing: border-box;
+}
+
+.HM-faq-card:first-child {
+  border-top: 1px solid var(--grey15);
+}
+
+.HM-faq-card.HM-open {
+  height: auto;
+  min-height: 254px;
+  align-items: flex-start;
+  padding-top: 34px;
+  padding-bottom: 34px;
 }
 
 .HM-faq-card.HM-open .HM-faq-number {
@@ -49,9 +63,9 @@
 }
 
 .HM-faq-number {
-  flex: 0 0 52px;
-  width: 52px;
-  height: 52px;
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,16 +78,18 @@
     rgba(36, 36, 36, 0) 100%
   );
   color: var(--absolutefff);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: var(--fw-semibold);
-  border-radius: 10px;
+  border-radius: 12px;
 }
+
 .HM-faq-content {
   flex: 1 1 auto;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: center;
+  gap: 20px;
   padding: 0;
   margin: 0;
 }
@@ -84,100 +100,97 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  min-height: 52px;
+  gap: 30px;
 }
 
 .HM-faq-question {
   flex: 1 1 auto;
   min-width: 0;
-  max-width: 534px; 
+  max-width: 524px;
   margin: 0;
   padding: 0;
   font-size: 22px;
   font-weight: var(--fw-medium);
-  line-height: 1.4;
+  line-height: 150%;
   color: var(--absolutefff);
 }
 
 .HM-faq-icon-btn {
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
+  width: 34px;
+  height: 34px;
   margin: 0;
-  padding: 0;
+  padding-right: 0;
   background: transparent;
   border: none;
   color: var(--absolutefff);
-  font-size: 20.4px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .HM-faq-answer {
   width: 100%;
   min-width: 0;
 }
 
 .HM-faq-answer p {
-  max-width: 588px; 
+  max-width: 588px;
   width: 100%;
   margin: 0;
   padding: 0;
   color: var(--grey90);
   font-size: 18px;
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-regular);
   line-height: 150%;
 }
 
 @media (max-width: 1440px) {
   .HM-faq-section {
+  
+  }
+
+  .HM-faq-column {
     padding-top: 60px;
     padding-bottom: 60px;
   }
 
-  .HM-faq-grid {
-    width: 100%;
-    max-width: 100%;
+  .HM-faq-card {
+    padding: 24px 40px;
+    height: 110px;
+    min-height: 110px;
   }
 
-  .HM-faq-card {
-    padding: 20px 24px;
-    gap: 18px;
+  .HM-faq-card.HM-open {
+    height: auto;
+    min-height: 222px;
+    padding-bottom: 30px;
   }
 
   .HM-faq-number {
-    flex: 0 0 46px;
-    width: 46px;
-    height: 46px;
+    flex: 0 0 62px;
+    width: 62px;
+    height: 62px;
     font-size: 24px;
     border-radius: 8px;
   }
 
   .HM-faq-content {
-    padding: 0;
-    gap: 14px;
-  }
-
-  .HM-faq-card-header {
-    min-height: 46px;
-    gap: 14px;
+    gap: 16px;
   }
 
   .HM-faq-question {
     font-size: 18px;
-    max-width: 428px;
+    max-width: 412px;
   }
 
   .HM-faq-icon-btn {
-    margin: 0;
-    font-size: 15.6px;
+    font-size: 26px;
   }
 
   .HM-faq-answer p {
-    max-width: 474px; 
-    width: 100%;
+    max-width: 474px;
     font-size: 16px;
   }
 }
@@ -189,10 +202,15 @@
   }
 
   .HM-faq-grid {
-    width: calc(100% - 32px);
+    width: 100%;
     max-width: none;
     display: block;
     margin: 0 auto;
+  }
+
+  .HM-faq-column {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .HM-faq-column:nth-child(2) {
@@ -204,13 +222,24 @@
   }
 
   .HM-faq-card {
-    padding: 16px 20px;
+    height: auto;
+    min-height: auto;
+    padding: 24px;
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-rows: auto auto;
-    column-gap: 14px;
-    row-gap: 12px;
+    column-gap: 24px;
+    row-gap: 20px;
     align-items: center;
+  }
+
+  .HM-faq-card:first-child {
+    border-top: none;
+  }
+
+  .HM-faq-card.HM-open {
+    min-height: auto;
+    padding-bottom: 30px;
   }
 
   .HM-faq-card-header,
@@ -221,10 +250,8 @@
   .HM-faq-number {
     grid-column: 1;
     grid-row: 1;
-    width: 40px;
-    height: 40px;
-    margin: 0;
-    padding: 0;
+    width: 52px;
+    height: 52px;
     font-size: 20px;
     border-radius: 6px;
     align-self: center;
@@ -235,23 +262,17 @@
     grid-row: 1;
     min-width: 0;
     max-width: 192px;
-    margin: 0;
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 100%;
     align-self: center;
   }
 
   .HM-faq-icon-btn {
+    padding-right: 13px;
     grid-column: 3;
     grid-row: 1;
-    width: 24px;
-    height: 24px;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 26px;
+    height: 26px;
     align-self: center;
   }
 
@@ -259,20 +280,11 @@
     grid-column: 1 / -1;
     grid-row: 2;
     width: 100%;
-    min-width: 0;
   }
 
   .HM-faq-answer p {
-    width: 100%;
     max-width: 310px;
-    margin: 0;
-    padding: 0 0 8px;
     font-size: 14px;
     line-height: 150%;
-  }
-
-  .HM-faq-card.HM-open .HM-faq-question,
-  .HM-faq-card.HM-open .HM-faq-icon-btn {
-    margin-bottom: 0;
   }
 }
