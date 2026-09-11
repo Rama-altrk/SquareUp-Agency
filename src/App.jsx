@@ -9,18 +9,9 @@ import Process from './pages/Process/Process';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 
-// <<<<<<< Belasan-Salhab-branch
 
-// import ServicesCards from './Components/ServicesCards/ServicesCards'
-// import SquareUp from './Components/SquareUp/SquareUp'
-// import ProjectCards from './Components/ProjectCards/ProjectCards'
-// =======
-// import SectionHeading from './components/SectionHeading/SectionHeading';
-// import Hero from './components/Hero/Hero';
-// >>>>>>> bb1cb34019e06d67b2b29c688efbf59374d43af7
-  
-// >>>>>>> main
 function App() {
+
   const navItems = [
     { content: 'Home', path: '/' },
     { content: 'Work', path: '/work' },
@@ -46,21 +37,14 @@ function App() {
         </Routes>
       </div>
       <Footer />
+
+      
     </>
     </Router>
   )
 }
 
 export default App
-//     <div className='mainContainer'>
-//       <ServicesCards/>
-//       <SquareUp 
-//           title="Thank you for your Interest in SquareUp."
-//           description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
-//           button={<button>Start Project</button>}
-// />
-// <ProjectCards/>
-//     </div>
 
 
 

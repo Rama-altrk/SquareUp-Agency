@@ -11,6 +11,18 @@ function getCardsPerView(width) {
   return 1
 }
 
+// function getCardsPerView() {
+//   if (window.matchMedia('(min-width: 1441px)').matches) {
+//     return 'all'
+//   }
+
+//   if (window.matchMedia('(min-width: 992px)').matches) {
+//     return 2
+//   }
+
+//   return 1
+// }
+
 function Slider({ cards }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
@@ -22,6 +34,7 @@ function Slider({ cards }) {
 
   const cardsPerView = getCardsPerView(screenWidth)
   const [currentIndex, setCurrentIndex] = useState(0)
+ 
   if (cardsPerView === "all") {
     return <About reviews={cards} />
   }
@@ -35,16 +48,14 @@ function Slider({ cards }) {
       prevIndex === totalPages - 1 ? 0 : prevIndex + 1
     )
   }
-
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? totalPages - 1 : prevIndex - 1
     )
   }
-
   return (
     <div className="slider">
-      <div className="container">
+      <div className="bh-container">
         <button className="arrow-btn left" onClick={prevSlide}><FaChevronLeft/></button>
         <About reviews={visibleCards} />
         <button className="arrow-btn right" onClick={nextSlide}><FaChevronRight/></button>
