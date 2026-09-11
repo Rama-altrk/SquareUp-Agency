@@ -1,9 +1,10 @@
 import { COLORS } from "../../assets/constants/colors";
-import { FONTS } from "../../assets/constants/fonts";
+import { FONTS } from '../../assets/constants/fonts';
 import Button from "../Button/Button";
 import InputsField from "../InputsField/InputsField";
+
 import './Form.css';
-// import Button from "../Button/Button";
+
 
 export default function Form() {
     return (
@@ -27,11 +28,11 @@ export default function Form() {
                 <span style={{...FONTS.medium , color: COLORS.absolutefff}}>Why are you contacting us?</span>
                 <div className="rtContainerChecks">
                     <div className="rtRowChecks">
-                        <label htmlFor="web">
+                        {/* <label htmlFor="web">
                             <input type="checkbox" name="webDesign" id="web" />
                             <div className="rtMyCheckbox"></div>
                             <span>Web Design</span>
-                        </label>
+                        </label> */}
                         <div>
                             <input type="checkbox" name="webDesign" id="web" />
                             <label htmlFor="web">Web Design</label>

@@ -1,6 +1,4 @@
 .bh-cards {
-  /* margin-top: 200px; */
-  /* margin-bottom: 200px; */
   border: 1px solid var(--grey15);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -14,18 +12,14 @@
   flex-direction: column;
   padding: 100px 80px;
   max-width: 798px;
-  /* width: 50%; */
-
   .bh3{
     font-size: 28px;
     line-height: 1.5;
-    /* width: 100%; */
   }
   .bh-p{
   margin-top: 24px;
   font-size: 18px;
   line-height: 1.5;
-  /* max-width: 100%; */
   }
 }
 }
@@ -58,18 +52,16 @@
   line-height: 150%;
 }
 .bh-author-title{
-  font-size: 18px;
+  font-size: 18px; 
   line-height: 150%;
 }
 @media (max-width:1440px){
 .bh-cards{
-  /* margin-top: 20%; */
+  /* margin-top: 0%; */
   /* margin-bottom: 30%; */
   height: 420px;
-  height: auto;
+  /* height: auto; */
     display: flex;
-
-      /* max-width: 100%; */
     .bh-card{
   height: 420px;
   display: flex;
@@ -80,13 +72,11 @@
   
   .bh3{
       font-size: 20px;
-      /* max-width:100%; */
         line-height: 1.5;
     }
     .bh-p{
         margin-top: 20px;
         font-size: 16px;
-        /* max-width:520px; */
     }
 }
     

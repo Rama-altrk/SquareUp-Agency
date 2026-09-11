@@ -2,7 +2,7 @@ import './About.css'
 import Container from '../../components/Container/Container'
 import CardNumber from '../../components/CardNumaber/CardNumber'
 import AboutSquareUpSection from '../../components/AboutSquareUpSection/AboutSquareUpSection'
-import CtaSection from "../../components/ctaSection/CtaSection";
+import CtaSection from "../../Components/CtaSection/CtaSection";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
 
@@ -73,7 +73,7 @@ export default function About() {
                 description="Welcome to SquareUp, where collaboration, expertise, and client-centricity intersect to shape the future of digital innovation."
                 background="straight.png"
             />
-            {/* <Container>
+            <Container>
 
                 <AboutSquareUpSection />
                 <div className="ourStory">
@@ -95,7 +95,7 @@ export default function About() {
                         )
                     })
                 }
-            </Container> */}
+            </Container>
         
             <CtaSection/>
         </>
