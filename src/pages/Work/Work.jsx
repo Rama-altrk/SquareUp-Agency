@@ -15,6 +15,7 @@ export default function Work() {
         className= "rtWorkHeading"
       />
       <TextBeforCard
+        title= "At SquareUp"
         description= "We have had the privilege of working with a diverse range of clients and delivering exceptional digital products that drive success."
         subTitle= "Here are ten examples of our notable works:"
       />

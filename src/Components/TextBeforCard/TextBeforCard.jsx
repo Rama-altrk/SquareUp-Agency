@@ -1,10 +1,10 @@
 import './TextBeforCard.css'
 
 
-export default function TextBeforCard({description , subTitle}) {
+export default function TextBeforCard({className , title , description , subTitle}) {
     return (
-        <div className='rtTextCard'>
-            <h2>At SquareUp</h2>
+        <div className={`${className} rtTextCard`}>
+            <h2>{title}</h2>
             <p>{description}</p>
             <span>{subTitle}</span>
         </div>
