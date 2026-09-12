@@ -1,5 +1,5 @@
-
-import Faq from "../../components/FaqSection/faq"
+ 
+import Faq from "../../components/FaqSection/Faq"
 import Contactmeta from "../../components/Contactmeta/Contactmeta";
 import Socialmedia from "../../components/Socialmedia/Socialmedia";
 import './Contact.css'

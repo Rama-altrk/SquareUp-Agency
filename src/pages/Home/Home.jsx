@@ -7,7 +7,12 @@ import ServicesCards from '../../components/ServicesCards/ServicesCards'
 import CardWyhChoose from '../../components/CardWyhChoose/CardWyhChoose'
 import Slider from '../../components/Slider/Slider';
 import SquareUp from '../../components/SquareUp/SquareUp'
-import Faq from '../../components/FaqSection/faq'
+
+
+
+
+import Faq from '../../components/FaqSection/Faq'
+
 
 export default function Home() {
 
@@ -192,10 +197,15 @@ export default function Home() {
             />
 
             <Faq items={faqList} />
+           
+
+
+
+
+            
 
 
             <SquareUp
-
                 title="Thank you for your Interest in SquareUp."
                 description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
 
