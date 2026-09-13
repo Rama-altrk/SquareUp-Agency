@@ -1,10 +1,11 @@
 
 import CardNumber from '../../components/CardNumaber/CardNumber'
 import Container from '../../components/Container/Container'
-import AtSquareUpSection from '../../components/AtSquareUpSection/AtSquareUpSection'
+// import AtSquareUpSection from '../../components/AtSquareUpSection/AtSquareUpSection'
 import './Process.css'
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import SquareUp from '../../components/SquareUp/SquareUp';
+import TextBeforCard from '../../Components/TextBeforCard/TextBeforCard';
 
 export default function Process() {
 
@@ -87,9 +88,12 @@ export default function Process() {
         description= "At SquareUp, we value transparency, collaboration, and delivering exceptional results."
         background="doubleWaveToUp.png"
       />
-      
-      <Container>
-        <AtSquareUpSection />
+      <TextBeforCard
+          description= "We follow a structured and collaborative process to ensure the successful delivery of exceptional digital products. Our process combines industry best practices, creative thinking, and a client-centric approach."
+          subTitle= "Here's an overview of our typical process:"
+      />
+      {/* <Container>
+        
         {
           Card.map((item) => {
             return (
@@ -105,7 +109,7 @@ export default function Process() {
             )
           })
         }
-      </Container>
+      </Container> */}
       <SquareUp 
         title="Thank you for your Interest in SquareUp."
         description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."

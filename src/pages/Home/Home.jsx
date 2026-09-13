@@ -144,9 +144,9 @@ export default function Home() {
             
             <Hero /> 
             <Companies 
-                        text="Trusted By 250+ Companies"
-                        images={images}/>
-
+                text="Trusted By 250+ Companies"
+                images={images}
+            />
 
             <SectionHeading
                 title="Our Services"

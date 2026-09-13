@@ -35,29 +35,6 @@
                 color: var(--green99);
                 font-family: var(--font-primary);
                 line-height: 150%;
-                div{
-                    min-width: 668px;
-                    min-width: 49%;
-                    display: flex;
-                    align-items: center;
-                    input{
-                        margin-right: 10px;
-                        width: 28px;
-                        height: 28px;
-                        padding: 4px;
-                        border-radius: 4px !important;
-                        border: 1px solid var(--grey20);
-                        background-color: var(--grey15) !important;
-                        accent-color: var(--grey15) !important;
-                        accent-color: #222;
-                    }
-                    label{
-                        font-size: 18px;
-                        line-height: 150%;
-                        letter-spacing: 0%;
-                        color: var(--green99);
-                    }
-                }
             }
         }
     }
@@ -87,7 +64,7 @@
                 border-bottom: 1px solid var(--grey20);
                 line-height: 33px;
                 background-image: linear-gradient(transparent 31px , var(--grey20) 31px);
-                background-size: 100% 33px; /* يجب أن يطابق الارتفاع الـ line-height */
+                background-size: 100% 33px;
                 background-attachment: local; 
                 height: 66px;
                 
@@ -116,17 +93,6 @@
             border-radius: 8px;
             span{
                 font-size: 18px;
-            }
-            .rtContainerChecks{
-                .rtRowChecks{
-                    div{
-                        /* min-width: 541px;
-                        min-width: 49%; */
-                        label{
-                            font-size: 16px;
-                        }
-                    }
-                }
             }
         }
         .rtThirdRow{
@@ -167,17 +133,8 @@
                 font-size: 16px;
             }
             .rtContainerChecks{
-                /* display: flex;
-                flex-direction: column; */
                 .rtRowChecks{
                     flex-direction: column;
-                    div{
-                        /* min-width: 541px;
-                        min-width: 49%; */
-                        label{
-                            font-size: 16px;
-                        }
-                    }
                 }
             }
         }

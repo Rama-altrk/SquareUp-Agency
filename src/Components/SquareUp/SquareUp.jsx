@@ -14,8 +14,8 @@ return (
             <div className="bs-square">
                 <img src="/img/squareIcon.png" alt="{title}" />
             </div>
-            <h2>{title}</h2>
-            <p>{description}</p>
+            <h2 className='rtH2'>{title}</h2>
+            <p className='rtP'>{description}</p>
             <Link to="/Work">
                 <Button
                     className="rtButtonStartProject"
