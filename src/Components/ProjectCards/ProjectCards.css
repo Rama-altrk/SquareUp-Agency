@@ -96,8 +96,10 @@
             flex-shrink: 0;  
             
             .arrow-img {
-                width: 13px;
-                height: 13px;
+                /* font-size: 17px; */
+                width: 34px;
+                height: 34px;
+                color: var(--green50);
             }
         }
     }

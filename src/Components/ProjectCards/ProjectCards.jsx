@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './ProjectCards.css';
 import '../../assets/styles/colors.css'
 import '../../assets/styles/fonts.css'
+import { GoArrowUpRight } from "react-icons/go";
 
 
 const projectsData = [ 
@@ -118,7 +119,9 @@ function ProjectCards() {
                                 </a>
                         </div>
                         <a href={project.link} target="_blank" className="bs-card-arrow-btn">
-                          <img src="img/Vector(Stroke).svg" alt="arrow" className="arrow-img" />
+                          {/* <img src="/img/Vector(Stroke).svg" alt="arrow" className="arrow-img" /> */}
+                          {/* import { GoArrowUpRight } from "react-icons/go"; */}
+                          <GoArrowUpRight className="arrow-img"/>
                         </a>
               </div>
               <p className="bs-card-description">{project.description}</p>
