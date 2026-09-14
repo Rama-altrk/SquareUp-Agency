@@ -1,7 +1,64 @@
 
 import { useState } from 'react';
-import { FaPlus, FaTimes } from 'react-icons/fa';
 import './faq.css';
+
+const PlusIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="5" x2="12" y2="19" />
+    <line x1="5" y1="12" x2="19" y2="12" />
+  </svg>
+);
+
+const CloseIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
+
+const DEFAULT_FAQ_ITEMS = [
+  {
+    id: 1,
+    question: "What services does SquareUp provide?",
+    answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+  },
+  {
+    id: 2,
+    question: "How can SquareUp help my business?",
+    answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+  },
+  {
+    id: 3,
+    question: "What industries does SquareUp work with?",
+    answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+  },
+  {
+    id: 4,
+    question: "How long does it take to complete a project with SquareUp?",
+    answer:"SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+
+  },
+  {
+    id: 5,
+    question: "Do you offer ongoing support and maintenance after the project is completed?",
+    answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+  },
+  {
+    id: 6,
+    question: "Can you work with existing design or development frameworks?",
+    answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+  },
+  {
+    id: 7,
+    question: "How involved will I be in the project development process?",
+    answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+  },
+  {
+    id: 8,
+    question: "Can you help with website or app maintenance and updates?",
+    answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
+  }
+];
 
 const FaqCard = ({ item, isOpen, toggleFAQ }) => {
   return (
@@ -14,7 +71,6 @@ const FaqCard = ({ item, isOpen, toggleFAQ }) => {
       </span>
 
       <div className="HM-faq-content">
-
         <div className="HM-faq-card-header">
           <h3 className="HM-faq-question">
             {item.question}
@@ -23,12 +79,13 @@ const FaqCard = ({ item, isOpen, toggleFAQ }) => {
           <button
             className="HM-faq-icon-btn"
             type="button"
+            aria-label="Toggle question"
             onClick={(e) => {
               e.stopPropagation();
               toggleFAQ(item.id);
             }}
           >
-            {isOpen ? <FaTimes /> : <FaPlus />}
+            {isOpen ? <CloseIcon /> : <PlusIcon />}
           </button>
         </div>
 
@@ -37,27 +94,25 @@ const FaqCard = ({ item, isOpen, toggleFAQ }) => {
             <p>{item.answer}</p>
           </div>
         )}
-
       </div>
     </div>
   );
 };
 
-const Faq = ({ items }) => {
-  const [openId, setOpenId] = useState(null);
+const Faq = ({ items = DEFAULT_FAQ_ITEMS }) => {
+  const [openId, setOpenId] = useState(1);
 
   const toggleFAQ = (id) => {
     setOpenId((current) => (current === id ? null : id));
   };
 
-
-  const leftItems = items?.slice(0, 4) || [];
-  const rightItems = items?.slice(4, 8) || [];
+  const safeItems = items && items.length > 0 ? items : DEFAULT_FAQ_ITEMS;
+  const leftItems = safeItems.slice(0, 4);
+  const rightItems = safeItems.slice(4, 8);
 
   return (
     <section className="HM-faq-section">
       <div className="HM-faq-grid">
-
         <div className="HM-faq-column">
           {leftItems.map((item) => (
             <FaqCard
@@ -69,7 +124,6 @@ const Faq = ({ items }) => {
           ))}
         </div>
 
-
         <div className="HM-faq-column">
           {rightItems.map((item) => (
             <FaqCard
@@ -80,7 +134,6 @@ const Faq = ({ items }) => {
             />
           ))}
         </div>
-
       </div>
     </section>
   );
