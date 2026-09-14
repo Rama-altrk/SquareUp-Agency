@@ -1,13 +1,14 @@
 import { COLORS } from '../../assets/constants/colors'
 import { FONTS } from '../../assets/constants/fonts'
 import './Companies.css'
-function Companies({images,text}) {
+
+function Companies({images,text,className}) {
   return (
-    <>
+    <div className='rtContainerCompanies'>
     <div className='trusted'>
-      <p style={{color:COLORS.green99,display:'flex',justifyContent:'center',alignItems:'center',...FONTS.medium}}>{text}</p>
+      <p style={{color:COLORS.green99 ,display:'flex' ,justifyContent:'center',alignItems:'center',...FONTS.medium}}>{text}</p>
     </div>
-     <div className='count'  style={{ backgroundColor: COLORS.grey10 }}>
+    <div className={`count ${className}`}  style={{ backgroundColor: COLORS.grey10 }}>
     {
       images.map((img,index)=>{
         return(
@@ -18,7 +19,7 @@ function Companies({images,text}) {
       })
     }
     </div>
-    </>
+    </div>
   )
 }
 export default Companies

@@ -27,9 +27,7 @@ function Hero() {
         </div>
       </div>
       <div className="hero-buttons">
-        {/* <button className="btn-outline-temp">Our Works</button>
-        <button className="btn-primary-temp">Contact Us</button> */}
-        <Link to="/Work">
+        <Link to="/work">
           <Button
             name={"Our Work"}
             height={58}
@@ -63,11 +61,6 @@ function Hero() {
           alt="hero waves"
           className="hero-bg"
         />
-        {/* <img src="/img/squares.png" alt="square Back" className='squares' /> */}
-      </div>
-
-      <div className="trusted-badge">
-        <p className="trusted-text">Trusted By 250+ Companies</p>
       </div>
     </div>
   );
