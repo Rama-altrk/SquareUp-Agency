@@ -62,6 +62,7 @@ export default function Form() {
             </div> */}
             <TextareaField
                 labelName= "Your Message"
+                width= "100%"
             />
             <Button
                 name= "Submit"
