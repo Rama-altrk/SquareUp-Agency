@@ -12,6 +12,7 @@ import SquareUp from '../../components/SquareUp/SquareUp'
 
 
 import Faq from '../../components/FaqSection/Faq'
+import ChooseAndServiceForm from '../../Components/ChooseAndServiceForm/ChooseAndServiceForm';
 
 
 export default function Home() {
@@ -197,7 +198,7 @@ export default function Home() {
             />
 
             <Faq items={faqList} />
-           
+        
 
 
 
