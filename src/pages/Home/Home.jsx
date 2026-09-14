@@ -12,6 +12,7 @@ import SquareUp from '../../components/SquareUp/SquareUp'
 
 
 import Faq from '../../components/FaqSection/Faq'
+import FormSlider from '../../components/ReviewForm/ReviewForm';
 
 
 export default function Home() {
@@ -152,7 +153,7 @@ export default function Home() {
                 text="Trusted By 250+ Companies"
                 images={images}
             />
-
+                
             <SectionHeading
                 title="Our Services"
                 description="Transform your brand with our innovative digital solutions that captivate and engage your audience."
@@ -197,7 +198,6 @@ export default function Home() {
             />
 
             <Faq items={faqList} />
-           
 
 
 
@@ -210,6 +210,7 @@ export default function Home() {
                 description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
 
             />
+             <FormSlider reviews={reviews}/>
         </>
 
     )
