@@ -17,8 +17,9 @@ function ReviewForm() {
                 inputType="Text"
                 labelId="title"/>
             <TextareaField
-                className="tt"
-                labelName="Review Description"/>
+                className="bh-textarea"
+                labelName="Review Description"
+                width="50%"/>
         </div>
         <div style={{display:"flex",gap:10}} className='bh-row2'>
             <InputsField 
@@ -51,8 +52,8 @@ function ReviewForm() {
                     borderRadius="6px"
                     backgroundColor="var(--green50)"
                     color=" var(--grey15)"
-                    border="none"
-                    className="bh-btn"/>
+                    border=""
+                    className="bh-bn"/>
         </div>
 
 
