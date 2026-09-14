@@ -1,9 +1,9 @@
 import './ReviewForm.css'
-import InputsField from '../InputsField/InputsField'
 import { FONTS } from '../../assets/constants/fonts'
 import { COLORS } from '../../assets/constants/colors'
+import InputsField from '../InputsField/InputsField'
 
-function ReviewForm({ reviews }) {
+function ReviewForm() {
   return (
    <>
    <form action="">
