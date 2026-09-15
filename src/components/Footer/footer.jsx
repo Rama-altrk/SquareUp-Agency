@@ -13,7 +13,7 @@ const Footer = () => {
     { name: 'About', path: '#' },
     { name: 'Careers', path: '#' },
     { name: 'Contact', path: '#' },
-  ];
+  ]; 
   return (
     <footer className="footer-container">
       <div className="footer-top">

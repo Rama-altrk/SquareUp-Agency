@@ -1,12 +1,11 @@
-
-
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './nav.css';
-import Logo from './../Logo/logo'; 
+import Logo from '../Logo/logo'; 
 import { FaTimes } from 'react-icons/fa';
 import { HiMenuAlt3 } from 'react-icons/hi'; 
 import Button from '../Button/Button';
+
 
 const Nav = ({ items, btnText = "Contact Us" }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +19,6 @@ const Nav = ({ items, btnText = "Contact Us" }) => {
     <nav>
       <div className="navbar">
         <Logo />
-
         <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
           {items?.map((item, index) => {
             // المسار الحالي للصفحة المفتوحة في المتصفح
