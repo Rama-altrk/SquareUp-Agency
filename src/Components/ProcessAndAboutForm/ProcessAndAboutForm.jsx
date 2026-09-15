@@ -5,7 +5,7 @@ import './ProcessAndAboutForm.css'
 
 export default function ProssecAndAboutForm() {
     return (
-        <div className='rtProcessAndAboutForm' >
+        <form className='rtProcessAndAboutForm' >
             <InputsField
                 labelId= "idCard"
                 inputType= "text"
@@ -33,6 +33,6 @@ export default function ProssecAndAboutForm() {
                 fontSize= "18px"
                 className= "rtSubmitAddForm"
             />
-        </div>
+        </form>
     )
 }
