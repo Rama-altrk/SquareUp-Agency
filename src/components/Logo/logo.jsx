@@ -4,10 +4,11 @@ import './logo.css'
 const Logo = ({ 
   icon = "/img/squareIcon.png", 
   textImg = "/img/homeImg/SquareUp.png", 
-  altText = "SquareUp" 
+  altText = "SquareUp" ,
+  className
 }) => {
   return (
-    <div className="logo-container">
+    <div className={`${className} logo-container`}>
       <div className="logo-box">
         <img src={icon} alt="Logo Icon" />
       </div>

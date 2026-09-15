@@ -12,6 +12,6 @@ function Button ({name, width , height , fontSize, borderRadius, backgroundColor
                 }}>{name}
                 </button>
         </>
-    )
+    ) 
 }
 export default Button
