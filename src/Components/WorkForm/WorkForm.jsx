@@ -17,7 +17,7 @@ function InputsField({
     <div className={`rtContainerInput ${className}`} style={{ width: widthField }}>
       <label htmlFor={labelId} className="rtLabelForm">
         {labelField}
-      </label>
+      </label> 
 
       {isTextarea ? (
         <textarea

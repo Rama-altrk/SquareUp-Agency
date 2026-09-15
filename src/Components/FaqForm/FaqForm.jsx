@@ -16,7 +16,7 @@ export function InputsField({
   isTextarea = false,
   rows = 3
 }) {
-  return (
+  return ( 
     <div className={`rtContainerInput ${className}`} style={{ width: widthField }}>
       <label 
         htmlFor={labelId} 
