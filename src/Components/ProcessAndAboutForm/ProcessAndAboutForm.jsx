@@ -1,3 +1,4 @@
+import Button from '../Button/Button'
 import InputsField from '../InputsField/InputsField'
 import TextareaField from '../TextareaField/TextareaField'
 import './ProcessAndAboutForm.css'
@@ -20,6 +21,17 @@ export default function ProssecAndAboutForm() {
             <TextareaField
                 width= "100%"
                 labelName="Please enter your card's content"
+            />
+            <Button 
+                name= "Submit"
+                width= "145px"
+                height= "63px"
+                borderRadius= "8px"
+                border= "1px solid var(--green50)"
+                backgroundColor= "var(--green50)"
+                color= "var(--grey10)"
+                fontSize= "18px"
+                className= "rtSubmitAddForm"
             />
         </div>
     )
