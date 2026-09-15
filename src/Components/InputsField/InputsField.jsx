@@ -9,4 +9,4 @@ export default function InputsField({className, widthField , labelField , labelI
             <input type={inputType} className='rtInputForm' name={labelId} id={labelId} placeholder='Type here' style={{...FONTS.regular , color: COLORS.absolutefff}}/>
         </div>
     )
-}
+} 
