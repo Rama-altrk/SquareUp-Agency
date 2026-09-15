@@ -60,11 +60,11 @@ function App() {
           <Route path="/process" element={<Process/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/Contact" element={<Contact/>} />
-// <<<<<<< Batoul-Hasan-Branch
-//         </Routes>
-//       </div>
-//       <Footer />
-// =======
+{/* // <<<<<<< Batoul-Hasan-Branch */}
+{/* //         </Routes> */}
+{/* //       </div> */}
+{/* //       <Footer /> */}
+{/* // ======= */}
         </Route>
       
 
@@ -87,7 +87,7 @@ function App() {
         </Route>
         
       </Routes>
-// >>>>>>> main
+{/* // >>>>>>> main */}
     </>
     </Router>
   )

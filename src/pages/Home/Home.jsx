@@ -7,12 +7,7 @@ import ServicesCards from '../../components/ServicesCards/ServicesCards'
 import CardWyhChoose from '../../components/CardWyhChoose/CardWyhChoose'
 import Slider from '../../components/Slider/Slider';
 import SquareUp from '../../components/SquareUp/SquareUp'
-
-
-
-
 import Faq from '../../components/FaqSection/Faq'
-import FormSlider from '../../components/ReviewForm/ReviewForm';
 
 
 export default function Home() {
@@ -218,7 +213,7 @@ export default function Home() {
                 description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
 
             />
-             <FormSlider/>
+
         </>
 
     )

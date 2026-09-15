@@ -15,7 +15,7 @@ function ReviewForm() {
                 widthField="50%"
                 labelField="Review Title"
                 inputType="Text"
-                labelId="title"/>
+                labelId="title"/> 
             <TextareaField
                 className="bh-textarea"
                 labelName="Review Description"
