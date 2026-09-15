@@ -12,7 +12,7 @@ import SquareUp from '../../components/SquareUp/SquareUp'
 
 
 import Faq from '../../components/FaqSection/Faq'
-import ChooseAndServiceForm from '../../Components/ChooseAndServiceForm/ChooseAndServiceForm';
+import FormSlider from '../../components/ReviewForm/ReviewForm';
 
 
 export default function Home() {
@@ -116,7 +116,7 @@ export default function Home() {
             image:"./img/homeImg/EmilyTurner.png",
             author: "Emily Turner",
             authorTitle: "CEO of FitLife Tracker"
-        }
+        },
     ];
 
 
@@ -210,7 +210,6 @@ export default function Home() {
 
 
 
-
             
 
 
@@ -219,6 +218,7 @@ export default function Home() {
                 description="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
 
             />
+             <FormSlider/>
         </>
 
     )

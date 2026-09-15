@@ -102,15 +102,9 @@
 }
 .profile-info {
    padding-left: 12px ;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* padding-left: 18px ; */
-/* max-width: 307px; */
-/* min-height: 45px; */
 }
 .bh-author{
   font-size: 16px;
-  /* font-weight: 500; */
 }
 .bh-author-title{
   font-size: 12px;
