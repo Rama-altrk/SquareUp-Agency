@@ -195,6 +195,7 @@ export default function Home() {
                 description="At SquareUp, we take pride in delivering exceptional digital products and services that drive success for our clients. Here's what some of our satisfied clients have to say about their experience working with us"
                 background="waveToUp.png"
             />
+
             <Slider cards={reviews}></Slider>
 
             <SectionHeading
@@ -203,8 +204,9 @@ export default function Home() {
                 background="doubleWaveToUp.png"
             />
 
+
             <Faq items={faqList} />
-        
+
 
 
 
