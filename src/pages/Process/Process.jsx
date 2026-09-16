@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState , useEffect } from 'react';
 import CardNumber from '../../components/CardNumaber/CardNumber'
 import Container from '../../components/Container/Container'
 // import AtSquareUpSection from '../../components/AtSquareUpSection/AtSquareUpSection'
@@ -8,6 +8,7 @@ import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import SquareUp from '../../components/SquareUp/SquareUp';
 import TextBeforCard from '../../Components/TextBeforCard/TextBeforCard';
 import RtCardNumber from '../../Components/RtCardNumber/RtCardNumber';
+import { setItemInLocalstorage } from '../../utils/localStorag';
 
 export default function Process() {
 
@@ -133,6 +134,12 @@ export default function Process() {
       contentCard: "We believe in continuous improvement and strive to optimize your digital product even after launch. We monitor user feedback, analytics, and market trends to identify opportunities for enhancement and growth. We proactively suggest improvements and updates to keep your digital product ahead of the curve.",
     },
   ])
+
+  useEffect(()=>{
+      if(!localStorage.getItem("rtProcessStorage")){
+          setItemInLocalstorage("rtProcessStorage" , rtProcessData)
+      }
+  })
 
   const [isExpanded, setIsExpanded] = useState(false);
   const visibleCards = isExpanded ? rtProcessData : rtProcessData.slice(0, 4);

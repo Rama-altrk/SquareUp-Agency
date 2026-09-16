@@ -6,7 +6,8 @@ import CtaSection from "../../Components/CtaSection/CtaSection";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import RtCardNumber from '../../Components/RtCardNumber/RtCardNumber';
 import TextAbout from '../../Components/TextAbout/TextAbout';
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { setItemInLocalstorage } from '../../utils/localStorag';
 
 
 export default function About() {
@@ -69,7 +70,7 @@ export default function About() {
         }
     ]
 
-    const RtAboutData = [
+    const rtAboutData = [
         {
             id: 1,
             cardNumber: "01",
@@ -109,6 +110,12 @@ export default function About() {
             contentCard: "With each project, SquareUp's reputation grew. Their portfolio expanded to include a diverse range of industries and their impact was felt far and wide. From startups to established enterprises, businesses sought out SquareUp for their expertise in creating digital products that delivered tangible results. SquareUp's success was driven by their passion for innovation, their dedication to quality, and their commitment to helping their clients succeed in the digital world.",
         }
     ]
+
+    useEffect(()=>{
+        if(!localStorage.getItem("rtAboutStorage")){
+            setItemInLocalstorage("rtAboutStorage" , rtAboutData)
+        }
+    })
     return (
         <>
             <SectionHeading
@@ -145,7 +152,7 @@ export default function About() {
             <section className='rtAboutSection'>
                 <h2>Our Story</h2>
                 <div className="rtAboutGrid">
-                    {RtAboutData.map((item) => (
+                    {rtAboutData.map((item) => (
                     <RtCardNumber
                         key={item.id}
                         cardNumber={item.cardNumber}
