@@ -7,7 +7,6 @@ import Button from '../Button/Button'
 
 function ReviewForm() {
   return (
-   <>
    <form action="" style={{display:"flex",flexDirection:"column",gap:10}}>
         <div style={{display:"flex",gap:10}} className='bh-row1'>
             <InputsField
@@ -60,7 +59,6 @@ function ReviewForm() {
 
     
    </form>
-    </>
   )
 }
 

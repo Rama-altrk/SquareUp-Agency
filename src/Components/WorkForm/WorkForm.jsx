@@ -98,9 +98,9 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
     setDescription('');
     setEditingId(null);
   };
-
+// <div className="work-form-container">
   return (
-    <div className="work-form-container">
+    
       <form className="work-form-content" onSubmit={(e) => e.preventDefault()}>
         
         <InputsField
@@ -167,6 +167,6 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
         </div>
 
       </form>
-    </div>
+    
   );
-}
+}{/* </div> */}

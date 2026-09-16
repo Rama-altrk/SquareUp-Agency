@@ -60,11 +60,6 @@ function App() {
           <Route path="/process" element={<Process/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/Contact" element={<Contact/>} />
-{/* // <<<<<<< Batoul-Hasan-Branch */}
-{/* //         </Routes> */}
-{/* //       </div> */}
-{/* //       <Footer /> */}
-{/* // ======= */}
         </Route>
       
 
@@ -72,22 +67,28 @@ function App() {
           <Route index element= {<DashboardHome/>}/>
             <Route path="services" element={<ServiceSectionCrud/>} />
               <Route path='services/add' element={<AddAndEditService/>}/>
+              <Route path='services/edit/:id' element={<AddAndEditService/>}/>
             <Route path="chooseUs" element={<ChooseSectionCrud/>} />
               <Route path='chooseUs/add' element={<AddAndEditChoose/>}/>
+              <Route path='chooseUs/edit/:id' element={<AddAndEditChoose/>}/>
             <Route path="feedback" element={<ReviewSectionCrud/>} />
               <Route path='feedback/add' element={<AddAndEditReview/>}/>
+              <Route path='feedback/edit/:id' element={<AddAndEditReview/>}/>
             <Route path="faq" element={<FaqSectionCrud/>} />
               <Route path='faq/add' element={<AddAndEditFaq/>}/>
+              <Route path='faq/edit/:id' element={<AddAndEditFaq/>}/>
           <Route path='work' element={<DashboardWork/>}/>
             <Route path='work/add' element={<AddAndEditWork/>}/>
+            <Route path='work/edit/:id' element={<AddAndEditWork/>}/>
           <Route path='process' element={<DashboardProcess/>}/>
             <Route path='process/add' element={<AddAndEditProcess/>}/>
+            <Route path='process/edit/:id' element={<AddAndEditProcess/>}/>
           <Route path='about' element={<DashboardAbout/>}/>
             <Route path='about/add' element={<AddAndEditAbout/>}/>
+            <Route path='about/edit/:id' element={<AddAndEditAbout/>}/>
         </Route>
         
       </Routes>
-{/* // >>>>>>> main */}
     </>
     </Router>
   )

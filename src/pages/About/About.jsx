@@ -6,6 +6,7 @@ import CtaSection from "../../Components/CtaSection/CtaSection";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import RtCardNumber from '../../Components/RtCardNumber/RtCardNumber';
 import TextAbout from '../../Components/TextAbout/TextAbout';
+import { useState } from 'react';
 
 
 export default function About() {

@@ -8,6 +8,7 @@ import CardWyhChoose from '../../components/CardWyhChoose/CardWyhChoose'
 import Slider from '../../components/Slider/Slider';
 import SquareUp from '../../components/SquareUp/SquareUp'
 import Faq from '../../components/FaqSection/Faq'
+import WorkProjectForm from '../../Components/WorkForm/WorkForm';
 
 
 export default function Home() {
@@ -203,7 +204,7 @@ export default function Home() {
             <Faq items={faqList} />
 
 
-
+            {/* <WorkProjectForm/> */}
 
             
 
