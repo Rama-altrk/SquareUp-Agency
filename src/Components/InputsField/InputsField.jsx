@@ -6,8 +6,15 @@ export default function InputsField({className, widthField , labelField , labelI
     return (
         <div className={`${className} rtContainerInput`} style={{width: widthField}}>
             <label htmlFor={labelId} className='rtLabelForm' style={{...FONTS.medium , color : COLORS.absolutefff}}>{labelField}</label>
-            <input type={inputType} className='rtInputForm' name={labelId} id={labelId} placeholder='Type here' 
-            value={value} onChange={onChange} style={{...FONTS.regular , color: COLORS.absolutefff}}/>
+            <input 
+                type={inputType}
+                className='rtInputForm' 
+                name={labelId} 
+                id={labelId} 
+                placeholder='Type here' 
+                value={value} 
+                onChange={onChange} 
+                style={{...FONTS.regular , color: COLORS.absolutefff}}/>
         </div>
     )
 } 

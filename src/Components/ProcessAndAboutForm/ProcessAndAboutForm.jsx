@@ -3,7 +3,7 @@ import InputsField from '../InputsField/InputsField'
 import TextareaField from '../TextareaField/TextareaField'
 import './ProcessAndAboutForm.css'
 
-export default function ProssecAndAboutForm() {
+export default function PossecAndAboutForm() {
     return (
         <form className='rtProcessAndAboutForm' >
             <InputsField
