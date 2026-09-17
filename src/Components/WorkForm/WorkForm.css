@@ -1,11 +1,37 @@
-
 .work-form-container {
   width: 100%;
   max-width: 1280px;
   margin: 40px auto;
   padding: 0 20px;
-  font-family: var(--font-primary);
+  font-family: var(--font-primary, system-ui, sans-serif);
   box-sizing: border-box;
+}
+
+.work-form-top-bar {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.work-back-btn {
+  background-color: var(--green50, #9eff00);
+  color: #0E0E0E;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.work-back-btn:hover {
+  filter: brightness(0.92);
+  transform: translateY(-1px);
 }
 
 .work-form-content {
@@ -18,8 +44,8 @@
 .rtContainerInput {
   padding: 24px 40px;
   border-radius: 8px;
-  border: 1px solid var(--grey15);
-  background-color: var(--grey12);
+  border: 1px solid var(--grey15, #262626);
+  background-color: var(--grey12, #1f1f1f);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -31,7 +57,7 @@
   line-height: 150%;
   letter-spacing: 0%;
   font-weight: 500;
-  color:var(--absolutefff);
+  color: var(--absolutefff, #ffffff);
   margin: 0;
   display: block;
 }
@@ -41,31 +67,30 @@
   font-size: 18px;
   line-height: 150%;
   border: none;
-  border-bottom: 1px solid var(--grey20);
+  border-bottom: 1px solid var(--grey20, #333333);
   padding-bottom: 8px;
   outline: none;
   width: 100%;
   box-sizing: border-box;
-  color:var(--absolutefff);
+  color: var(--absolutefff, #ffffff);
   transition: border-color 0.2s ease;
 }
 
 .rtContainerInput .rtInputForm:focus {
-  border-bottom-color: var(--green50);
+  border-bottom-color: var(--green50, #9eff00);
 }
 
 .rtContainerInput .rtTextareaForm {
   resize: vertical;
-  min-height: 40px;       
+  min-height: 70px;
   padding-bottom: 4px;
   line-height: 1.4;
-  font-family:var(--font-primary);
+  font-family: var(--font-primary, system-ui, sans-serif);
 }
 
 .rtContainerInput .rtInputForm::placeholder {
-  color: var(--grey40);
+  color: var(--grey40, #666666);
 }
-
 
 .work-actions-group {
   display: flex;
@@ -84,26 +109,38 @@
 }
 
 .work-btn-add {
-  background-color:var(--green50);
+  background-color: var(--green50, #9eff00);
   color: #0E0E0E;
   border: none;
 }
 
 .work-btn-add:hover {
-  background-color: var(--green50);
+  filter: brightness(0.92);
+  transform: translateY(-1px);
 }
 
 .work-btn-save {
   background-color: #1F1F1F;
-  color: var(--green50);
-  border: 1px solid var(--grey20);
+  color: var(--absolutefff, #ffffff);
+  border: 1px solid var(--grey20, #333333);
 }
 
 .work-btn-save:hover {
-  border-color: var(--green50);
-  color: var(--green50);
+  border-color: var(--green50, #9eff00);
+  color: var(--green50, #9eff00);
+  transform: translateY(-1px);
 }
 
+.work-btn-cancel {
+  background-color: #1F1F1F;
+  color: var(--grey40, #a0aec0);
+  border: 1px solid var(--grey20, #333333);
+}
+
+.work-btn-cancel:hover {
+  border-color: var(--grey40, #a0aec0);
+  color: var(--absolutefff, #ffffff);
+}
 
 @media screen and (max-width: 1440px) {
   .rtContainerInput {
@@ -131,5 +168,13 @@
   }
   .rtContainerInput .rtInputForm {
     font-size: 16px;
+  }
+  .work-actions-group {
+    width: 100%;
+    flex-direction: column;
+  }
+  .work-btn-action {
+    width: 100%;
+    text-align: center;
   }
 }
