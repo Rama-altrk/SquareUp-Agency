@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { COLORS } from '../../assets/constants/colors';
 import { FONTS } from '../../assets/constants/fonts';
@@ -83,33 +83,30 @@ export default function FaqForm() {
   const stateItem = location.state?.item || location.state?.faq;
   const pathId = params.id || location.pathname.split('/').filter(Boolean).pop();
   const effectiveId = stateItem?.id || (!isNaN(pathId) ? pathId : null);
-  
   const isEditMode = Boolean(effectiveId);
 
-  const [question, setQuestion] = useState('');
-  const [answer, setAnswer] = useState('');
-
-  useEffect(() => {
+  // دالة مساعدة لجلب البيانات الأولية فوراً قبل أول Render
+  const getInitialData = () => {
     if (stateItem) {
-      setQuestion(stateItem.question || '');
-      setAnswer(stateItem.answer || '');
-      return;
+      return { question: stateItem.question || '', answer: stateItem.answer || '' };
     }
-
     if (effectiveId) {
       try {
         const stored = localStorage.getItem(STORAGE_KEY);
         const list = stored ? JSON.parse(stored) : DEFAULT_FAQ_ITEMS;
         const current = list.find((el) => String(el.id) === String(effectiveId));
         if (current) {
-          setQuestion(current.question || '');
-          setAnswer(current.answer || '');
+          return { question: current.question || '', answer: current.answer || '' };
         }
       } catch (err) {
         console.error('Error loading data:', err);
       }
     }
-  }, [effectiveId, stateItem]);
+    return { question: '', answer: '' };
+  };
+
+  const [question, setQuestion] = useState(() => getInitialData().question);
+  const [answer, setAnswer] = useState(() => getInitialData().answer);
 
   const handleSaveData = (e) => {
     e.preventDefault();
@@ -123,7 +120,6 @@ export default function FaqForm() {
       const list = stored ? JSON.parse(stored) : DEFAULT_FAQ_ITEMS;
 
       if (isEditMode) {
-        // حالة التعديل
         const updated = list.map((item) => {
           if (String(item.id) === String(effectiveId)) {
             return {

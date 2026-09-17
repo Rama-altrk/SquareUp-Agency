@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './WorkForm.css';
 
@@ -32,10 +32,10 @@ function InputsField({
         />
       ) : (
         <input
+          id={labelId}
           type={inputType}
           className="rtInputForm"
           name={labelId}
-          id={labelId}
           value={value}
           onChange={onChange}
           placeholder={placeholder}
@@ -48,30 +48,11 @@ function InputsField({
 export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
   const navigate = useNavigate();
 
-  const [title, setTitle] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [projectName, setProjectName] = useState('');
-  const [projectLink, setProjectLink] = useState('');
-  const [description, setDescription] = useState('');
-  const [editingId, setEditingId] = useState(null);
-
-  useEffect(() => {
-    if (editingItem) {
-      setTitle(editingItem.title || '');
-      setProjectName(editingItem.projectName || editingItem.category || '');
-      setImageUrl(editingItem.imageUrl || editingItem.image || '');
-      setProjectLink(editingItem.projectLink || editingItem.link || '');
-      setDescription(editingItem.description || '');
-      setEditingId(editingItem.id);
-    } else {
-      setTitle('');
-      setImageUrl('');
-      setProjectName('');
-      setProjectLink('');
-      setDescription('');
-      setEditingId(null);
-    }
-  }, [editingItem]);
+  const [title, setTitle] = useState(editingItem?.title || '');
+  const [imageUrl, setImageUrl] = useState(editingItem?.imageUrl || editingItem?.image || '');
+  const [projectName, setProjectName] = useState(editingItem?.projectName || editingItem?.category || '');
+  const [projectLink, setProjectLink] = useState(editingItem?.projectLink || editingItem?.link || '');
+  const [description, setDescription] = useState(editingItem?.description || '');
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -98,7 +79,7 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
     if (!title.trim() || !projectName.trim()) return;
 
     const updatedProject = {
-      id: editingId || Date.now(),
+      id: editingItem?.id || Date.now(),
       title: title.trim(),
       category: projectName.trim(),
       projectName: projectName.trim(),
@@ -129,7 +110,6 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
         <InputsField
           labelField="Project Name / Category"
           labelId="work_project_name"
-          inputType="text"
           placeholder="e.g. Mobile App for Food Delivery Service"
           value={projectName}
           onChange={(e) => setProjectName(e.target.value)}
@@ -138,7 +118,6 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
         <InputsField
           labelField="Add Title"
           labelId="work_title"
-          inputType="text"
           placeholder="e.g. HungryBites"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -147,7 +126,6 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
         <InputsField
           labelField="Add Image"
           labelId="work_image"
-          inputType="text"
           placeholder="Enter image URL (e.g. /img/card2photo.png)"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
