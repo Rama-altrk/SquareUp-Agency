@@ -1,3 +1,6 @@
+.rtCardAndAction{
+    position: relative;
+}
 .rtCard{
     padding: 100px 50px;
     border: 1px solid var(--grey15);
@@ -6,7 +9,6 @@
         display: flex;
         align-items: end;
         gap: 14px;
-        /* height: ; */
         span{
             font-weight: var(--fw-semibold);
             color: var(--green80);
@@ -46,11 +48,17 @@
     
 }
 
-/* .rtAboutCard{
-    div{
-
-    }
-} */
+.rtStorageAction{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 3px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+}
 
 @media screen and (max-width: 1440px) {
     .rtCard{
@@ -105,7 +113,6 @@
         div{
             height: 56px;
             h3{
-                /* height: auto; */
                 padding-bottom: 20px;
             }
             

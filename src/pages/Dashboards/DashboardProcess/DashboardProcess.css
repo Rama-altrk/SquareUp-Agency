@@ -7,8 +7,22 @@
 
 }
 
+.rtMainProcess:hover .rtProcessCardDash{
+    filter: blur(5px);
+}
+
+.rtDashAction{
+    transition: ease-in 0.7s ;
+}
+.rtMainProcess:hover .rtDashAction{
+    opacity: 1;
+    visibility: visible;
+    
+}
 .rtProcessCardDash{
     border-radius: 14px;
+    transition: filter 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1440px) {
