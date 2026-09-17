@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProjectCards.css';
-import '../../assets/styles/colors.css'
-import '../../assets/styles/fonts.css'
+import '../../assets/styles/colors.css';
+import '../../assets/styles/fonts.css';
 import { GoArrowUpRight } from "react-icons/go";
+import { MdEdit, MdDelete } from "react-icons/md";
 
-
-const projectsData = [ 
+const defaultProjectsData = [
   {
     id: 1,
     category: "E-Commerce Platform for Fashion Hub",
@@ -88,53 +88,127 @@ const projectsData = [
   },
 ];
 
-function ProjectCards() {
+function ProjectCards({ isDashboard = false, onEdit, onDelete, projects }) {
+  const getInitialData = () => {
+    if (Array.isArray(projects) && projects.length > 0) return projects;
+    try {
+      const stored = localStorage.getItem("projects_data");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    return defaultProjectsData;
+  };
+
+  const [items, setItems] = useState(getInitialData);
   const [visibleCount, setVisibleCount] = useState(4);
 
-  const bsShow = () => {
-    if (visibleCount < projectsData.length) {
-      setVisibleCount(projectsData.length); 
+  useEffect(() => {
+    if (Array.isArray(projects) && projects.length > 0) {
+      setItems(projects);
     } else {
-      setVisibleCount(4); 
+      const stored = localStorage.getItem("projects_data");
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setItems(parsed);
+            return;
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      setItems(defaultProjectsData);
+    }
+  }, [projects]);
+
+  const handleDelete = (id) => {
+    const updated = items.filter((item) => String(item.id) !== String(id));
+    setItems(updated);
+    try {
+      localStorage.setItem("projects_data", JSON.stringify(updated));
+    } catch (e) {
+      console.error("Error updating localStorage after delete", e);
+    }
+
+    if (onDelete) {
+      onDelete(id);
+    }
+  };
+
+  const bsShow = () => {
+    if (visibleCount < items.length) {
+      setVisibleCount(items.length);
+    } else {
+      setVisibleCount(4);
     }
   };
 
   return (
     <div className="bs-projects-section">
       <div className="bs-projects-grid">
-        {projectsData.slice(0, visibleCount).map((project) => (
+        {items.slice(0, visibleCount).map((project) => (
           <div className="bs-card" key={project.id}>
             <div className="bs-card-category-header">
-              <span>{project.category}</span>
+              <span>{project.category || project.projectName}</span>
             </div>
+
             <div className="bs-card-body">
               <div className="bs-card-image-container">
-                  <img src={project.image} alt={project.title} />
+                <img src={project.image || project.imageUrl || '/img/card1photo.png'} alt={project.title} />
+
+                {isDashboard && (
+                  <div className="bs-card-hover-actions">
+                    <button
+                      type="button"
+                      className="bs-action-btn edit-btn"
+                      onClick={() => onEdit && onEdit(project)}
+                      title="Edit"
+                    >
+                      <MdEdit />
+                    </button>
+                    <button
+                      type="button"
+                      className="bs-action-btn delete-btn"
+                      onClick={() => handleDelete(project.id)}
+                      title="Delete"
+                    >
+                      <MdDelete />
+                    </button>
+                  </div>
+                )}
               </div>
+
               <h3 className="bs-card-title">{project.title}</h3>
+
               <div className="bs-card-top">
-                        <div className="bs-card-title-link-group">
-                                <a href={project.link} target="_blank"  className="bs-card-link-box">
-                                  {project.link}
-                                </a>
-                        </div>
-                        <a href={project.link} target="_blank" className="bs-card-arrow-btn">
-                          {/* <img src="/img/Vector(Stroke).svg" alt="arrow" className="arrow-img" /> */}
-                          {/* import { GoArrowUpRight } from "react-icons/go"; */}
-                          <GoArrowUpRight className="arrow-img"/>
-                        </a>
+                <div className="bs-card-title-link-group">
+                  <a href={project.link || project.projectLink} target="_blank" rel="noreferrer" className="bs-card-link-box">
+                    {project.link || project.projectLink}
+                  </a>
+                </div>
+                <a href={project.link || project.projectLink} target="_blank" rel="noreferrer" className="bs-card-arrow-btn">
+                  <GoArrowUpRight className="arrow-img" />
+                </a>
               </div>
+
               <p className="bs-card-description">{project.description}</p>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="bs-more-container">
-        <button onClick={bsShow} className="bs-load-more-btn">
-          {visibleCount < projectsData.length ? "Show More" : "Show Less"}
-        </button>
-      </div>
+      {items.length > 4 && (
+        <div className="bs-more-container">
+          <button onClick={bsShow} className="bs-load-more-btn">
+            {visibleCount < items.length ? "Show More" : "Show Less"}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
