@@ -1,4 +1,5 @@
-import  { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './WorkForm.css';
 
 function InputsField({
@@ -45,13 +46,32 @@ function InputsField({
 }
 
 export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
-  
-  const [title, setTitle] = useState(editingItem ? editingItem.title : '');
-  const [imageUrl, setImageUrl] = useState(editingItem ? editingItem.imageUrl : '');
-  const [projectName, setProjectName] = useState(editingItem ? editingItem.projectName : '');
-  const [projectLink, setProjectLink] = useState(editingItem ? editingItem.projectLink : '');
-  const [description, setDescription] = useState(editingItem ? editingItem.description : '');
-  const [editingId, setEditingId] = useState(editingItem ? editingItem.id : null);
+  const navigate = useNavigate();
+
+  const [title, setTitle] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+  const [projectName, setProjectName] = useState('');
+  const [projectLink, setProjectLink] = useState('');
+  const [description, setDescription] = useState('');
+  const [editingId, setEditingId] = useState(null);
+
+  useEffect(() => {
+    if (editingItem) {
+      setTitle(editingItem.title || '');
+      setProjectName(editingItem.projectName || editingItem.category || '');
+      setImageUrl(editingItem.imageUrl || editingItem.image || '');
+      setProjectLink(editingItem.projectLink || editingItem.link || '');
+      setDescription(editingItem.description || '');
+      setEditingId(editingItem.id);
+    } else {
+      setTitle('');
+      setImageUrl('');
+      setProjectName('');
+      setProjectLink('');
+      setDescription('');
+      setEditingId(null);
+    }
+  }, [editingItem]);
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -59,20 +79,18 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
 
     const newProject = {
       id: Date.now(),
-      title,
-      imageUrl,
-      projectName,
-      projectLink,
-      description
+      title: title.trim(),
+      category: projectName.trim(),
+      projectName: projectName.trim(),
+      image: imageUrl.trim() || '/img/card1photo.png',
+      imageUrl: imageUrl.trim(),
+      link: projectLink.trim(),
+      projectLink: projectLink.trim(),
+      description: description.trim()
     };
 
     if (onAdd) onAdd(newProject);
-
-    setTitle('');
-    setImageUrl('');
-    setProjectName('');
-    setProjectLink('');
-    setDescription('');
+    navigate(-1);
   };
 
   const handleSaveChanges = (e) => {
@@ -81,33 +99,47 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
 
     const updatedProject = {
       id: editingId || Date.now(),
-      title,
-      imageUrl,
-      projectName,
-      projectLink,
-      description
+      title: title.trim(),
+      category: projectName.trim(),
+      projectName: projectName.trim(),
+      image: imageUrl.trim() || '/img/card1photo.png',
+      imageUrl: imageUrl.trim(),
+      link: projectLink.trim(),
+      projectLink: projectLink.trim(),
+      description: description.trim()
     };
 
     if (onSave) onSave(updatedProject);
-
-  
-    setTitle('');
-    setImageUrl('');
-    setProjectName('');
-    setProjectLink('');
-    setDescription('');
-    setEditingId(null);
+    navigate(-1);
   };
-// <div className="work-form-container">
+
   return (
-    
+    <div className="work-form-container">
+      <div className="work-form-top-bar">
+        <button 
+          type="button" 
+          onClick={() => navigate(-1)} 
+          className="work-back-btn"
+        >
+          ← Back
+        </button>
+      </div>
+
       <form className="work-form-content" onSubmit={(e) => e.preventDefault()}>
-        
+        <InputsField
+          labelField="Project Name / Category"
+          labelId="work_project_name"
+          inputType="text"
+          placeholder="e.g. Mobile App for Food Delivery Service"
+          value={projectName}
+          onChange={(e) => setProjectName(e.target.value)}
+        />
+
         <InputsField
           labelField="Add Title"
           labelId="work_title"
           inputType="text"
-          placeholder="e.g. Mobile App for Food Delivery Service"
+          placeholder="e.g. HungryBites"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -121,14 +153,6 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
           onChange={(e) => setImageUrl(e.target.value)}
         />
 
-        <InputsField
-          labelField="Project Name"
-          labelId="work_project_name"
-          inputType="text"
-          placeholder="e.g. HungryBites"
-          value={projectName}
-          onChange={(e) => setProjectName(e.target.value)}
-        />
         <InputsField
           labelField="Project Link"
           labelId="work_project_link"
@@ -147,26 +171,34 @@ export default function WorkProjectForm({ onAdd, onSave, editingItem = null }) {
           isTextarea={true}
           rows={4}
         />
-
         <div className="work-actions-group">
-          <button 
-            type="button" 
-            onClick={handleAdd} 
-            className="work-btn-action work-btn-add"
-          >
-            Add
-          </button>
+          {editingItem ? (
+            <button 
+              type="button" 
+              onClick={handleSaveChanges} 
+              className="work-btn-action work-btn-save"
+            >
+              Save Changes
+            </button>
+          ) : (
+            <button 
+              type="button" 
+              onClick={handleAdd} 
+              className="work-btn-action work-btn-add"
+            >
+              Add
+            </button>
+          )}
 
-          <button 
-            type="button" 
-            onClick={handleSaveChanges} 
-            className="work-btn-action work-btn-save"
+          <button
+            type="button"
+            onClick={() => navigate(-1)}
+            className="work-btn-action work-btn-cancel"
           >
-            Save Changes
+            Cancel
           </button>
         </div>
-
       </form>
-    
+    </div>
   );
-}{/* </div> */}
+}

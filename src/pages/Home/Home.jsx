@@ -201,7 +201,7 @@ export default function Home() {
             />
 
 
-            <Faq items={faqList} />
+           <Faq />
 
 
             {/* <WorkProjectForm/> */}

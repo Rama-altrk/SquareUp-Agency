@@ -1,8 +1,30 @@
-
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { COLORS } from '../../assets/constants/colors';
 import { FONTS } from '../../assets/constants/fonts';
 import './FaqForm.css';
-import { useState } from 'react';
+
+const STORAGE_KEY = 'faq_items';
+
+const DEFAULT_FAQ_ITEMS = [
+  { id: 1, question: "What services does SquareUp provide?", answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." },
+  { id: 2, question: "How can SquareUp help my business?", answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." },
+  { id: 3, question: "What industries does SquareUp work with?", answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." },
+  { id: 4, question: "How long does it take to complete a project with SquareUp?", answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." },
+  { id: 5, question: "Do you offer ongoing support and maintenance after the project is completed?", answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." },
+  { id: 6, question: "Can you work with existing design or development frameworks?", answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." },
+  { id: 7, question: "How involved will I be in the project development process?", answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." },
+  { id: 8, question: "Can you help with website or app maintenance and updates?", answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." }
+];
+
+const getNextAvailableId = (items) => {
+  const ids = new Set(items.map((item) => Number(item.id)));
+  let nextId = 1;
+  while (ids.has(nextId)) {
+    nextId++;
+  }
+  return nextId;
+};
 
 export function InputsField({
   className = '',
@@ -16,11 +38,11 @@ export function InputsField({
   isTextarea = false,
   rows = 3
 }) {
-  return ( 
+  return (
     <div className={`rtContainerInput ${className}`} style={{ width: widthField }}>
-      <label 
-        htmlFor={labelId} 
-        className="rtLabelForm" 
+      <label
+        htmlFor={labelId}
+        className="rtLabelForm"
         style={{ ...FONTS.medium, color: COLORS.absolutefff }}
       >
         {labelField}
@@ -53,70 +75,131 @@ export function InputsField({
   );
 }
 
-export default function FaqForm({ onAdd, onSave }) {
+export default function FaqForm() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const params = useParams();
+
+  const stateItem = location.state?.item || location.state?.faq;
+  const pathId = params.id || location.pathname.split('/').filter(Boolean).pop();
+  const effectiveId = stateItem?.id || (!isNaN(pathId) ? pathId : null);
+  
+  const isEditMode = Boolean(effectiveId);
+
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
 
-  const handleAdd = (e) => {
-    e.preventDefault();
-    if (!question.trim() || !answer.trim()) return;
-    if (onAdd) onAdd({ question, answer });
-    setQuestion('');
-    setAnswer('');
-  };
+  useEffect(() => {
+    if (stateItem) {
+      setQuestion(stateItem.question || '');
+      setAnswer(stateItem.answer || '');
+      return;
+    }
 
-  const handleSaveChanges = (e) => {
+    if (effectiveId) {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        const list = stored ? JSON.parse(stored) : DEFAULT_FAQ_ITEMS;
+        const current = list.find((el) => String(el.id) === String(effectiveId));
+        if (current) {
+          setQuestion(current.question || '');
+          setAnswer(current.answer || '');
+        }
+      } catch (err) {
+        console.error('Error loading data:', err);
+      }
+    }
+  }, [effectiveId, stateItem]);
+
+  const handleSaveData = (e) => {
     e.preventDefault();
-    if (!question.trim() || !answer.trim()) return;
-    if (onSave) onSave({ question, answer });
-    setQuestion('');
-    setAnswer('');
+    if (!question.trim() || !answer.trim()) {
+      alert('الرجاء تعبئة السؤال والإجابة');
+      return;
+    }
+
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const list = stored ? JSON.parse(stored) : DEFAULT_FAQ_ITEMS;
+
+      if (isEditMode) {
+        // حالة التعديل
+        const updated = list.map((item) => {
+          if (String(item.id) === String(effectiveId)) {
+            return {
+              ...item,
+              question: question.trim(),
+              answer: answer.trim()
+            };
+          }
+          return item;
+        });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+      } else {
+        const newId = getNextAvailableId(list);
+        const newItem = {
+          id: newId,
+          question: question.trim(),
+          answer: answer.trim()
+        };
+        const updated = [...list, newItem].sort((a, b) => Number(a.id) - Number(b.id));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+      }
+
+      navigate(-1);
+    } catch (err) {
+      console.error('Error saving FAQ:', err);
+    }
   };
 
   return (
     <div className="faq-dashboard-container">
-      <form className="faq-form-content" onSubmit={(e) => e.preventDefault()}>
-        
+      <div className="faq-form-top-bar">
+        <button
+          type="button"
+          onClick={() => navigate(-1)}
+          className="faq-back-btn"
+        >
+          ← Back
+        </button>
+      </div>
 
+      <form className="faq-form-content" onSubmit={handleSaveData}>
         <InputsField
-          labelField="Add Question"
-          labelId="add_question"
+          labelField={isEditMode ? "Edit Question" : "Add Question"}
+          labelId="faq_question"
           inputType="text"
           placeholder="Type here"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
         />
 
-    
         <InputsField
-          labelField="Add Answer"
-          labelId="add_answer"
+          labelField={isEditMode ? "Edit Answer" : "Add Answer"}
+          labelId="faq_answer"
           placeholder="Type here"
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
           isTextarea={true}
-          rows={3}
+          rows={4}
         />
 
-  
         <div className="faq-actions-group">
-          <button 
-            type="button" 
-            onClick={handleAdd} 
-            className="faq-btn-action faq-btn-add"
+          <button
+            type="submit"
+            className={`faq-btn-action ${isEditMode ? 'faq-btn-save' : 'faq-btn-add'}`}
           >
-            Add
+            {isEditMode ? 'Save Changes' : 'Add'}
           </button>
 
-          <button 
-            type="button" 
-            onClick={handleSaveChanges} 
-            className="faq-btn-action faq-btn-save"
+          <button
+            type="button"
+            onClick={() => navigate(-1)}
+            className="faq-btn-action faq-btn-cancel"
           >
-            Save Changes
+            Cancel
           </button>
         </div>
-
       </form>
     </div>
   );

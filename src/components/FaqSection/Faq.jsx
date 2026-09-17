@@ -1,22 +1,41 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './faq.css';
 
+const STORAGE_KEY = 'faq_items';
+
 const PlusIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <line x1="12" y1="5" x2="12" y2="19" />
     <line x1="5" y1="12" x2="19" y2="12" />
   </svg>
 );
 
 const CloseIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <line x1="18" y1="6" x2="6" y2="18" />
     <line x1="6" y1="6" x2="18" y2="18" />
   </svg>
 );
 
-const DEFAULT_FAQ_ITEMS = [
+export const DEFAULT_FAQ_ITEMS = [
   {
     id: 1,
     question: "What services does SquareUp provide?",
@@ -35,8 +54,7 @@ const DEFAULT_FAQ_ITEMS = [
   {
     id: 4,
     question: "How long does it take to complete a project with SquareUp?",
-    answer:"SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
-
+    answer: "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more."
   },
   {
     id: 5,
@@ -99,16 +117,67 @@ const FaqCard = ({ item, isOpen, toggleFAQ }) => {
   );
 };
 
-const Faq = ({ items = DEFAULT_FAQ_ITEMS }) => {
-  const [openId, setOpenId] = useState(1);
+const Faq = ({ items }) => {
+  const parseAndSort = (data) => {
+    if (!Array.isArray(data)) return [];
+    return [...data].sort((a, b) => Number(a.id) - Number(b.id));
+  };
+
+  const getInitialFaqs = () => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored !== null) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parseAndSort(parsed);
+        }
+      }
+    } catch (err) {
+      console.error('Error reading localStorage in Faq', err);
+    }
+    return parseAndSort(items && items.length > 0 ? items : DEFAULT_FAQ_ITEMS);
+  };
+
+  const [faqList, setFaqList] = useState(getInitialFaqs);
+  const [openId, setOpenId] = useState(() => faqList[0]?.id ?? null);
+
+  useEffect(() => {
+    const syncFaqs = () => {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored !== null) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed)) {
+            setFaqList(parseAndSort(parsed));
+            return;
+          }
+        }
+      } catch (err) {
+        console.error('Error syncing faqs', err);
+      }
+      if (items && items.length > 0) {
+        setFaqList(parseAndSort(items));
+      }
+    };
+
+    syncFaqs();
+
+    window.addEventListener('storage', syncFaqs);
+    window.addEventListener('focus', syncFaqs);
+
+    return () => {
+      window.removeEventListener('storage', syncFaqs);
+      window.removeEventListener('focus', syncFaqs);
+    };
+  }, [items]);
 
   const toggleFAQ = (id) => {
     setOpenId((current) => (current === id ? null : id));
   };
 
-  const safeItems = items && items.length > 0 ? items : DEFAULT_FAQ_ITEMS;
-  const leftItems = safeItems.slice(0, 4);
-  const rightItems = safeItems.slice(4, 8);
+  const midPoint = Math.ceil(faqList.length / 2);
+  const leftItems = faqList.slice(0, midPoint);
+  const rightItems = faqList.slice(midPoint);
 
   return (
     <section className="HM-faq-section">
