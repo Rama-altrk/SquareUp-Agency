@@ -44,7 +44,7 @@ export default function AddAndEditProcess() {
     }
   }, [id ,cardToEdit])
 
-  const handleSubmit = (event)=>{
+  const mySubmit = (event)=>{
     event.preventDefault()
     console.log("submit")
     
@@ -68,7 +68,7 @@ export default function AddAndEditProcess() {
   }
 
   return (
-    <form className='rtProcessAndAboutForm' onSubmit={handleSubmit}>
+    <form className='rtProcessAndAboutForm' onSubmit={mySubmit}>
         <InputsField
             labelId= "idCard"
             inputType= "text"

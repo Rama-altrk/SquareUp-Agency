@@ -2,7 +2,7 @@ import Button from '../../../components/Button/Button'
 import './DashboardAbout.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState , useEffect } from 'react'
-import { getItemFromLocalstorage } from '../../../utils/localStorag'
+import { getItemFromLocalstorage , removeFromLocalstorage } from '../../../utils/localStorag'
 import RtCardNumber from '../../../Components/RtCardNumber/RtCardNumber'
 
 
@@ -26,6 +26,15 @@ export default function DashboardAbout() {
     useEffect(() => {
         freshData()
     }, [location.key])
+
+    console.log(getItemFromLocalstorage(ABOUT_KEY))
+
+    const myDelete = (id)=>{
+        if(window.confirm("Are you sure from delet this card?")){
+            const updatedList = removeFromLocalstorage(ABOUT_KEY , id)
+            setCards(updatedList)
+        }
+    }
 
     return (
         <>
@@ -54,6 +63,7 @@ export default function DashboardAbout() {
                     classNameAction= "rtDashActionAbout"
                     classNameMainContainer= "rtMainAbout"
                     onClickEdit={() => navigate(`/dashboard/about/edit/${item.id}`, { state: { cardToEdit: item } })}
+                    onClickDelete={() => myDelete(item.id)}
                 />
                 ))}
             </div>

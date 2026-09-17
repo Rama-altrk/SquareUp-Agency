@@ -4,7 +4,7 @@ import './DashboardProcess.css'
 import { Link } from 'react-router-dom'
 import { useState , useEffect } from 'react'
 import { useNavigate , useLocation} from 'react-router-dom'
-import { getItemFromLocalstorage} from '../../../utils/localStorag'
+import { getItemFromLocalstorage , removeFromLocalstorage} from '../../../utils/localStorag'
 
 const PROCESS_KEY = "rtProcessStorage"
 // const rtProcessDataInit =[
@@ -81,6 +81,13 @@ export default function DashboardProcess() {
     }, [location.key])
 
     console.log(getItemFromLocalstorage(PROCESS_KEY))
+
+    const myDelete = (id)=>{
+        if(window.confirm("Are you sure from delet this card?")){
+            const updatedList = removeFromLocalstorage(PROCESS_KEY , id)
+            setCards(updatedList)
+        }
+    }
     
     // const finalCards = getItemFromLocalstorage(PROCESS_KEY)
     return (
@@ -110,6 +117,8 @@ export default function DashboardProcess() {
                     classNameAction= "rtDashAction"
                     classNameMainContainer= "rtMainProcess"
                     onClickEdit={() => navigate(`/dashboard/process/edit/${item.id}`, { state: { cardToEdit: item } })}
+                    onClickDelete={() => myDelete(item.id)}
+                    classDelete= "rtButtonDelete"
                 />
                 ))}
             </div>

@@ -5,7 +5,7 @@ import InputsField from '../../../../Components/InputsField/InputsField'
 // import ProssecAndAboutForm from '../../../../Components/ProcessAndAboutForm/ProcessAndAboutForm'
 import TextareaField from '../../../../Components/TextareaField/TextareaField'
 import './AddAndEditAbout.css'
-import { addToLocalstorage , getItemFromLocalstorage } from '../../../../utils/localStorag'
+import { addToLocalstorage , getItemFromLocalstorage , setItemInLocalstorage } from '../../../../utils/localStorag'
 
 
 const ABOUT_KEY = 'rtAboutStorage'
@@ -44,7 +44,7 @@ export default function AddAndEditAbout() {
         }
     }, [id ,cardToEdit])
 
-    const handleSubmit = (event)=>{
+    const mySubmit = (event)=>{
         event.preventDefault()
         console.log("submit")
         
@@ -67,7 +67,7 @@ export default function AddAndEditAbout() {
         navigate('/dashboard/about')
     }
     return (
-            <form className='rtProcessAndAboutForm' onSubmit={handleSubmit} >
+            <form className='rtProcessAndAboutForm' onSubmit={mySubmit} >
                 <InputsField
                     labelId= "idCard"
                     inputType= "text"

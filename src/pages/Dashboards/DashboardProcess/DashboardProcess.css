@@ -19,10 +19,12 @@
     visibility: visible;
     
 }
+
 .rtProcessCardDash{
     border-radius: 14px;
     transition: filter 0.3s ease-in-out;
     cursor: pointer;
+
 }
 
 @media screen and (max-width: 1440px) {

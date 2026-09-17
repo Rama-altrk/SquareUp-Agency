@@ -2,10 +2,11 @@ import './RtCardNumber.css'
 import { Link } from 'react-router-dom'
 import { MdEdit, MdDelete} from "react-icons/md";
 import Button from '../Button/Button';
+// import { useEffect } from 'react';
 
 
-
-export default function RtCardNumber({className , cardNumber , cardTitle , contentCard ,classNameTitle , linkEdit , classNameAction , classNameMainContainer , onClickEdit}) {
+export default function RtCardNumber({className , cardNumber , cardTitle , contentCard ,classNameTitle , linkEdit , classNameAction , classNameMainContainer , classDelete , onClickEdit , onClickDelete}) {
+    
     return (
         <div className={`rtCardAndAction ${classNameMainContainer}`}>
             <div className={`${className} rtCard`}>
@@ -36,8 +37,12 @@ export default function RtCardNumber({className , cardNumber , cardTitle , conte
                     backgroundColor= "red"
                     border= "1px solid red"
                     borderRadius= "6px"
-                    className= "rtDelete"
+                    className= {`rtDelete ${classDelete}`}
+                    onClick={onClickDelete}
+                    type= "button"
+                    
                 />
+                
             </div>
         </div>
     )
