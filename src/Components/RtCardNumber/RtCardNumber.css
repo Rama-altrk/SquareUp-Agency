@@ -2,6 +2,7 @@
     position: relative;
 }
 .rtCard{
+    height: 100%;
     padding: 100px 50px;
     border: 1px solid var(--grey15);
     div{

@@ -42,7 +42,7 @@ export default function RtCardNumber({className , cardNumber , cardTitle , conte
                     type= "button"
                     
                 />
-                
+            
             </div>
         </div>
     )
