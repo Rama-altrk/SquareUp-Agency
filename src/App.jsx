@@ -1,7 +1,7 @@
 
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
- import Nav from './components/Nav/nav'
+import Nav from './components/Nav/nav'
 import Footer from './components/Footer/footer' 
 import Home from './pages/Home/Home';
 import Work from './pages/Work/Work';
@@ -18,13 +18,13 @@ import ServiceSectionCrud from './pages/Dashboards/DashboardHome/ServiceSectionC
 import ChooseSectionCrud from './pages/Dashboards/DashboardHome/ChooseSectionCrud/ChooseSectionCrud';
 import ReviewSectionCrud from './pages/Dashboards/DashboardHome/ReviewSectionCrud/ReviewSectionCrud';
 import FaqSectionCrud from './pages/Dashboards/DashboardHome/FaqSectionCrud/FaqSectionCrud';
-import AddAndEditService from './pages/Dashboards/DashboardHome/ServiceSectionCrud/addAndEditService/addAndEditService';
-import AddAndEditChoose from './pages/Dashboards/DashboardHome/ChooseSectionCrud/addAndEditChoose/addAndEditChoose';
-import AddAndEditReview from './pages/Dashboards/DashboardHome/ReviewSectionCrud/addAndEditReview/addAndEditReview';
-import AddAndEditFaq from './pages/Dashboards/DashboardHome/FaqSectionCrud/addAndEditFaq/addAndEditFaq';
-import AddAndEditWork from './pages/Dashboards/DashboardWork/addAndEditWork/addAndEditWork';
-import AddAndEditProcess from './pages/Dashboards/DashboardProcess/addAndEditProcess/addAndEditProcess';
-import AddAndEditAbout from './pages/Dashboards/DashboardAbout/addAndEditAbout/addAndEditAbout';
+import AddAndEditService from './pages/Dashboards/DashboardHome/ServiceSectionCrud/AddAndEditService/AddAndEditService';
+import AddAndEditChoose from './pages/Dashboards/DashboardHome/ChooseSectionCrud/AddAndEditChoose/AddAndEditChoose';
+import AddAndEditReview from './pages/Dashboards/DashboardHome/ReviewSectionCrud/AddAndEditReview/AddAndEditReview';
+import AddAndEditFaq from './pages/Dashboards/DashboardHome/FaqSectionCrud/AddAndEditFaq/AddAndEditFaq';
+import AddAndEditWork from './pages/Dashboards/DashboardWork/AddAndEditWork/AddAndEditWork';
+import AddAndEditProcess from './pages/Dashboards/DashboardProcess/AddAndEditProcess/AddAndEditProcess';
+import AddAndEditAbout from './pages/Dashboards/DashboardAbout/AddAndEditAbout/AddAndEditAbout';
 
 
 
