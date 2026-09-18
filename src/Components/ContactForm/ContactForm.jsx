@@ -3,7 +3,8 @@ import { FONTS } from '../../assets/constants/fonts';
 import Button from "../Button/Button";
 import CheckboxContainer from "../CheckboxContainer/CheckboxContainer";
 import InputsField from "../InputsField/InputsField";
-import './Form.css';
+import TextareaField from "../TextareaField/TextareaField";
+import './ContactForm.css';
 
 
 export default function Form() {
@@ -53,12 +54,16 @@ export default function Form() {
                     </div>
                 </div>
             </div>
-            <div className="rtThirdRow">
+            {/* <div className="rtThirdRow">
                 <label htmlFor="message" style={{...FONTS.medium , color: COLORS.absolutefff}}>Your Message</label>
                 <div>
                     <textarea name="message" id="message" placeholder="Type here" style={{...FONTS.regular , color: COLORS.absolutefff}}></textarea>
                 </div>
-            </div>
+            </div> */}
+            <TextareaField
+                labelName= "Your Message"
+                width= "100%"
+            />
             <Button
                 name= "Submit"
                 width= "145px"

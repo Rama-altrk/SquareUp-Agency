@@ -1,11 +1,11 @@
-
-import Faq from "../../components/FaqSection/faq"
+ 
+import Faq from "../../components/FaqSection/Faq"
 import Contactmeta from "../../components/Contactmeta/Contactmeta";
 import Socialmedia from "../../components/Socialmedia/Socialmedia";
 import './Contact.css'
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import CtaSection from '../../Components/CtaSection/CtaSection';
-import Form from "../../Components/Form/Form";
+import ContactForm from "../../Components/ContactForm/ContactForm";
 
 export default function Contact() {
   return (
@@ -17,7 +17,7 @@ export default function Contact() {
         background="doubleWaveToUp.png"
       />
       <Socialmedia/>
-      <Form/>
+      <ContactForm/>
       <Contactmeta/>
       <SectionHeading
           title="Frequently Asked Questions"

@@ -15,6 +15,6 @@ function SectionHeading({ title, description, background, className}) {
       </div>
     </section>
   );
-}
+} 
 
 export default SectionHeading;

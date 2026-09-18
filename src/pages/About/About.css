@@ -23,9 +23,32 @@
         color: var(--absolutefff);
         margin: 100px 0 100px 0;
     }
-
 }
 
+.rtAboutSection{
+    h2{
+        padding: 100px 50px;
+        border: 1px solid var(--grey15);
+        border-bottom: none;
+        color: var(--absolutefff);
+        font-family: var(--font-primary);
+        font-weight: var(--fw-semibold);
+        font-size: 58px;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+    .rtAboutGrid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .rtAboutCard{
+            div{
+                h3{
+                    color: var(--green80) !important;
+                }
+            }
+        }
+    }
+}
 
 @media screen and (max-width:1440px) {
     .rtAboutHeading{
@@ -36,6 +59,13 @@
             width: 780px !important;
             line-height: 24px !important;
             letter-spacing: -0.6% !important;
+        }
+    }
+
+    .rtAboutSection{
+        h2{
+            padding: 80px 50px;
+            font-size: 48px;
         }
     }
     .ourStory {
@@ -64,6 +94,15 @@
             width: 83.6vw !important;
             line-height: 24px !important;
             letter-spacing: -0.6% !important;
+        }
+    }
+    .rtAboutSection{
+        h2{
+            padding: 40px 24px;
+            font-size: 38px;
+        }
+        .rtAboutGrid{
+            grid-template-columns: 1fr;
         }
     }
 }

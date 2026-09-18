@@ -25,14 +25,14 @@
   margin: 0;
   padding: 0;
 }
-.nav-links a {
+.nav-links a { 
   padding: 14px 28px;
   color: var(--grey90);
   font-family: var(--font-primary);
   font-weight: var(--fw-semibold);
   text-decoration: none;
   font-size: 18px;
-  border: 1PX solid transparent;
+  border: 1px solid transparent;
   border-radius: 8px;
   transition: opacity 0.3s;
 }
@@ -113,7 +113,7 @@
 .nav-links{
   display: none;
   position: fixed;
-  top: 40px;
+  top: 80px;
   right: 80px;
   width: 80%;
   background-color: var(--grey10);
