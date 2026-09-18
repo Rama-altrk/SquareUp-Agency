@@ -13,6 +13,7 @@
     font-family: var(--font-primary);
     .rtDashWrapper{
         height: 50%;
+        height: 80%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -36,6 +37,13 @@
                 font-weight: var(--fw-semibold);
                 font-size: 38px;
                 color: var(--absolutefff);
+            }
+        }
+        .rtSubMenu{
+            padding-left: 50px;
+            list-style: none;
+            :first-child{
+                margin-top: 15px;
             }
         }
     }

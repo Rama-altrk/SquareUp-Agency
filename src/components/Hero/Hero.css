@@ -212,15 +212,14 @@
     }
   }
 
-
   .hero-bg{
     top: -46px;
     height: 248px;
     width: 859px;
     object-fit: contain;
   }
-  .trusted-badge {
+  /* .trusted-badge {
     bottom: 7px;
-  }
+  } */
 
 }

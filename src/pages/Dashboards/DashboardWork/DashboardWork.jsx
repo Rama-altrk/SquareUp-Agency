@@ -23,7 +23,7 @@ export default function DashboardWork() {
             name="Add Project"
             width="100%"
             height="38px"
-            fontSize="18px"
+            fontSize="28px"
             backgroundColor="var(--green50, #9eff00)"
             border="1px solid var(--green50, #9eff00)"
             color="var(--grey30, #191919)"

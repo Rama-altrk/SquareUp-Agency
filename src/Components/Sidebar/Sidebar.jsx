@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import Logo from '../Logo/logo'
 import './Sidebar.css'
-import { NavLink } from 'react-router-dom'
-import { Link } from 'react-router-dom';
+import { NavLink , useLocation , Link } from 'react-router-dom'
 import { IoIosArrowBack } from "react-icons/io";
 import { HiMenuAlt3 } from 'react-icons/hi'; 
 import { FaTimes } from 'react-icons/fa';
@@ -10,9 +9,24 @@ import { FaTimes } from 'react-icons/fa';
 
 
 export default function Sidebar() {
+    const location = useLocation()
     const [isOpen, setIsOpen] = useState(false);
-    console.log("حالة المنيو" , isOpen);
-    
+    const [isHomeSubOpen, setIsHomeSubOpen] = useState(false);
+
+    useEffect(()=>{
+        const currentPath = location.pathname
+
+        if (
+            currentPath.includes('/dashboard/services') || 
+            currentPath.includes('/dashboard/chooseUs') || 
+            currentPath.includes('/dashboard/feedback') || 
+            currentPath.includes('/dashboard/faq')
+        ) {
+            setIsHomeSubOpen(true)
+        } else {
+            setIsHomeSubOpen(false)
+        }
+    },[location.pathname])
     return (
         <>
             <aside className= {`rtSidebar`}>
@@ -26,9 +40,25 @@ export default function Sidebar() {
                     <nav className= {`rtSidebarMenu ${isOpen ? 'open' : ''}`}>
                         <ul>
                             <li>
-                                <NavLink to="/dashboard" end={true} onClick={() => setIsOpen(false)}>
+                                <NavLink to="/dashboard" end={true} >
                                     Home
                                 </NavLink>
+                                {isHomeSubOpen && (
+                                    <ul className="rtSubMenu" >
+                                        <li>
+                                            <NavLink to="/dashboard/services" onClick={() => setIsOpen(false)}>Our service</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/dashboard/chooseUs" onClick={() => setIsOpen(false)}>Why Choose us</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/dashboard/feedback" onClick={() => setIsOpen(false)}>feedback</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/dashboard/faq" onClick={() => setIsOpen(false)}>faq</NavLink>
+                                        </li>
+                                    </ul>
+                                )}
                             </li>
                             <li>
                                 <NavLink to="/dashboard/work" onClick={() => setIsOpen(false)}>

@@ -143,7 +143,7 @@ export default function Process() {
       if(saved){
           setCards(saved)
       }
-  })
+  },[])
 
   const [isExpanded, setIsExpanded] = useState(false);
   const visibleCards = isExpanded ? cards : cards.slice(0, 4);

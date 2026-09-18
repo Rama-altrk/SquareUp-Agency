@@ -120,7 +120,7 @@ export default function About() {
         if(saved){
             setCards(saved)
         }
-    })
+    },[])
     return (
         <>
             <SectionHeading

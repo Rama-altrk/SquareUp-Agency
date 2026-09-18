@@ -23,13 +23,26 @@ export const removeFromLocalstorage =(key , deletedId) =>{
 
         const newData = currentData.filter(item => parseInt(item.id) !== parseInt(deletedId))
 
-        setItemInLocalstorage(key , newData)
-        return newData
-        console.log("remove Dooooone")
+            const reorderedData = newData.map((item,index)=>{
+                if (item.hasOwnProperty('cardNumber') || item.cardNumber !== undefined) {
+                    const currentOrder = index + 1; 
+                    const formattedNumber = currentOrder.toString().padStart(2, '0');
+
+                    return{
+                        ...item,
+                        cardNumber: formattedNumber
+                    }
+                }
+                return item
+            })
+        setItemInLocalstorage(key , reorderedData)
+        return reorderedData
     } catch (error) {
         console.log(`error when remove`, error)
     }
 }
+
+
 
 
 // export const addToLocalstorage = (key , newItem)=>{
@@ -73,7 +86,7 @@ export const addToLocalstorage = (key , newItem)=> {
     try {
         const currentData = getItemFromLocalstorage(key)
 
-        const counterKey = `&{key}_counter`
+        const counterKey = `${key}_counter`
 
         let lastSavedId = localStorage.getItem(counterKey)
 

@@ -1,16 +1,26 @@
 .bs-services-section {
+    /* position: relative; */
     .bs-services-grid {
         /* background-color: var(--grey15); */
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* display: flex; */
         
         
         .bs-service-card {
+            position: relative;
             width: 100%;
             padding: 50px;
             border: 1px solid var(--grey15);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            .rtServicesCard{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
             .bs-container {
                 display: flex;
                 flex-direction: column;
@@ -75,11 +85,23 @@
         }
     }
 }
+.rtStorageActionServices{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 3px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+}
 
 @media (max-width: 992px) {
 .bs-services-section {
     .bs-services-grid {
-            flex-direction: column;
+            /* flex-direction: column; */
+            grid-template-columns: 1fr;
     .bs-service-card {
                 padding: 30px;
     .bs-container {
