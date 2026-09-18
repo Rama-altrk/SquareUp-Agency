@@ -119,7 +119,7 @@ function ProjectCards({ isDashboard = false, onEdit, onDelete, projects }) {
             return;
           }
         } catch (e) {
-          console.error(e);
+          console.error(e); 
         }
       }
       setItems(defaultProjectsData);
